@@ -7,6 +7,7 @@
 .clearFix {
     zoom: 1;
 }
+
 .clearFix::after {
     display: block;
     height: 0;
@@ -14,9 +15,11 @@
     overflow: hidden;
     clear: both;
 }
+
 .demo {
     width: 100%;
 }
+
 .demo-nav {
     position: fixed;
     top: 0;
@@ -25,10 +28,12 @@
     height: 100vh;
     background-color: #111;
 }
+
 .demo-nav a {
     display: block;
     color: #fff;
 }
+
 .demo-nav-title {
     box-sizing: border-box;
     padding-left: 20px;
@@ -39,37 +44,45 @@
     font-size: 20px;
     border-bottom: 1px solid #555;
 }
+
 .demo-nav-title .demo-nav-exit {
     display: none;
 }
+
 .demo-nav-content {
     box-sizing: border-box;
     margin: 10px auto;
     padding: 10px;
     width: 90%;
 }
+
 .demo-nav-content li {
     margin: 10px auto;
     height: 40px;
     line-height: 40px;
     border-bottom: 1px solid #333;
 }
+
 .demo-nav-content li:last-child {
     border-bottom: none;
 }
+
 .demo-nav-content li a {
     display: block;
     width: 100%;
     height: 100%;
     font-size: 16px;
 }
+
 .demo-nav-content li a.active {
     color: #2da7fd;
 }
+
 .demo-nav-content li a .fa {
     margin-right: 10px;
     font-size: 12px;
 }
+
 .demo-content {
     margin-left: 18%;
     box-sizing: border-box;
@@ -78,11 +91,13 @@
     background-color: #f9f9f9;
     transition: all .3s;
 }
+
 #count {
     margin: 0 5px;
     color: #2da7fd;
     font-size: 18px;
 }
+
 .demo-content-item {
     box-sizing: border-box;
     margin: 20px auto;
@@ -91,6 +106,7 @@
     background-color: #fff;
     transition: all .3s;
 }
+
 .demo-content-item-title {
     margin-bottom: 30px;
     padding-left: 10px;
@@ -98,9 +114,11 @@
     line-height: 30px;
     border-left: 5px solid #000;
 }
+
 .demo-content-item-ls {
     width: 100%;
 }
+
 .demo-content-item-ls li {
     float: left;
     box-sizing: border-box;
@@ -113,24 +131,28 @@
     border-radius: 6px;
     overflow: hidden;
 }
+
 .demo-content-item-ls li:hover {
     border: 1px solid #2da7fd;
     box-shadow: 0 0 10px #2da7fd;
     transform: translateY(-5px);
 }
+
 .demo-content-item-ls li a {
     display: block;
     width: 100%;
     height: 100%;
     color: #333;
 }
+
 .demo-content-item-ls li a img {
     position: relative;
     display: block;
     margin: 10px auto;
-    width: 95%;
+    width: auto;
     height: 150px;
 }
+
 .demo-content-item-ls li a .project-title {
     display: block;
     margin: 10px auto;
@@ -139,10 +161,11 @@
     line-height: 20px;
     font-size: 16px;
     color: #4370d7;
-    overflow:hidden;
+    overflow: hidden;
     white-space: nowrap;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
 }
+
 .demo-content-item-ls li a .project-des {
     display: block;
     margin: 10px auto;
@@ -152,12 +175,13 @@
     line-height: 30px;
     font-size: 13px;
     color: #555;
-    text-overflow:ellipsis;
-    display:-webkit-box;
-    -webkit-box-orient:vertical;
-    -webkit-line-clamp:2;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     overflow: hidden;
 }
+
 .demo-content-item-ls li a .project-tags {
     display: block;
     margin-top: 15px;
@@ -165,32 +189,40 @@
     font-size: 13px;
     color: #555;
 }
+
 .demo-content-item-ls li a .project-tags .fa {
     margin-right: 5px;
 }
+
 .demo-content-item-ls-two li {
     height: 150px;
     overflow: hidden;
 }
+
 .demo-content-item-ls-two li a {
     display: flex;
 }
+
 .demo-content-item-ls-two li a div {
     flex: 1;
     max-width: 200px;
 }
+
 .demo-content-item-ls-two li a img {
     margin: auto 5px;
     max-width: 100px;
     max-height: 100px;
 }
+
 .demo-content-item-ls-two li a .project-title,
 .demo-content-item-ls-two li a .project-des {
     max-width: 200px;
 }
+
 .demo-nav-m {
     display: none;
 }
+
 .demo-content .demo-foot {
     padding-left: 15px;
     height: 100px;
@@ -198,15 +230,18 @@
     border-radius: 6px;
     font-size: 13px;
 }
+
 .demo-foot p {
     display: flex;
     height: 50px;
     line-height: 50px;
 }
+
 .demo-foot a {
     margin: 0 5px;
     color: #4370d7;
 }
+
 .demo-go-top {
     position: fixed;
     bottom: 20px;
@@ -222,9 +257,11 @@
     font-size: 32px;
     color: #4370d7;
 }
+
 .demo-go-top:hover {
     cursor: pointer;
 }
+
 .demo-go-github {
     position: fixed;
     top: 0;
@@ -233,6 +270,7 @@
     height: 150px;
     line-height: 150px;
 }
+
 @media all and (max-width: 750px) and (min-width: 319px) {
     .demo-nav {
         position: fixed;
@@ -244,6 +282,7 @@
         transition: all .3s;
         z-index: 111;
     }
+
     .demo-nav-title {
         position: relative;
         width: 100%;
@@ -253,6 +292,7 @@
         font-size: 1.25rem;
         border-bottom: .0625rem solid #555;
     }
+
     .demo-nav-title .demo-nav-exit {
         position: absolute;
         top: .625rem;
@@ -263,16 +303,19 @@
         line-height: 3.125rem;
         text-align: center;
     }
+
     .demo-nav-title .demo-nav-exit .fa {
         color: #fff;
         font-style: 1rem;
     }
+
     .demo-nav-content {
         box-sizing: border-box;
         margin: .625rem auto;
         padding: .625rem;
         width: 100%;
     }
+
     .demo-nav-content li {
         box-sizing: border-box;
         margin: .625rem auto;
@@ -281,13 +324,16 @@
         line-height: 2.5rem;
         border-bottom: .0625rem solid #333;
     }
+
     .demo-nav-content li a {
         font-size: 1rem;
     }
+
     .demo-nav-content li a .fa {
         margin-right: .625rem;
         font-size: .75rem;
     }
+
     .demo-content {
         margin-left: 0;
         box-sizing: border-box;
@@ -296,6 +342,7 @@
         height: 100vh;
         background-color: #f9f9f9;
     }
+
     .demo-content-item {
         position: relative;
         box-sizing: border-box;
@@ -304,6 +351,7 @@
         border-radius: .625rem;
         background-color: #fff;
     }
+
     .demo-content-item-title {
         margin-bottom: 1.875rem;
         padding-left: .625rem;
@@ -311,9 +359,11 @@
         line-height: 1.875rem;
         border-left: .3125rem solid #000;
     }
+
     .demo-content-item-ls {
         width: 100%;
     }
+
     .demo-content-item-ls li {
         float: left;
         box-sizing: border-box;
@@ -325,16 +375,20 @@
         border: .0625rem solid #ccc;
         border-radius: .375rem;
     }
+
     .demo-content-item-ls-two li {
         height: 9.375rem;
     }
+
     .demo-content-item-ls-two li a img {
         margin: auto 0;
         width: 30%;
     }
+
     .demo-content-item-ls-two li a div {
         flex: 1;
     }
+
     .demo-nav-m {
         position: fixed;
         top: 0;
@@ -349,21 +403,26 @@
         box-shadow: 0 0 .3125rem .3125rem #ccc;
         z-index: 8;
     }
+
     .demo-nav-m a {
         color: #fff;
         font-size: 1.25rem;
     }
+
     .demo-nav-m span {
         margin-left: 1.25rem;
         color: #fff;
         font-size: 1.25rem;
     }
-    .demo-nav-m span:hover .demo-nav{
-        display: block!important;
+
+    .demo-nav-m span:hover .demo-nav {
+        display: block !important;
     }
+
     .demo-content {
         margin-top: 3.75rem;
     }
+
     .demo-content .demo-foot {
         margin-bottom: 3.75rem;
         padding-left: .9375rem;
@@ -373,6 +432,7 @@
         border-radius: .375rem;
         font-size: .8125rem;
     }
+
     .demo-go-top {
         position: fixed;
         bottom: 1.25rem;
@@ -388,9 +448,11 @@
         font-size: 2rem;
         color: #4370d7;
     }
+
     .demo-go-top:hover {
         cursor: pointer;
     }
+
     .demo-go-github {
         position: fixed;
         top: 0;
@@ -400,6 +462,7 @@
         line-height: 6.25rem;
         z-index: 12;
     }
+
     .demo-go-github img {
         display: block;
         width: 100%;

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>视频录制</title>
+	<style>
+		.set {
+			line-height: 35px;
+		}
+	</style>
+</head>
+<body>
+	<h1>视频录制</h1>
+	<p>视频录制小练习！</p>
+	
+	<div class="set">
+		<button class="start">开始录制语音</button>
+		<button class="stop">停止语音录制</button>
+		<button class="play">播放语音</button>
+	</div>
+	
+	<div class="set">
+		<button class="startVideo">开始录制视频</button>
+		<button class="stopVideo">停止视频录制</button>
+		<button class="playVideo">播放视频</button>
+	</div>
+
+	<div id="record"></div>
+	
+	<script src="./js/record.min.js"></script>
+	<script>
+		let startBtn = document.querySelector('.start');
+		let stopBtn = document.querySelector('.stop');
+		let playBtn = document.querySelector('.play');
+
+		// 录制音频
+		startBtn.onclick = function () {  
+			startRecord(false);
+		}
+		stopBtn.onclick = function () {  
+			stopRecord();
+		}
+		playBtn.onclick = function () {  
+			playRecord();
+		}
+
+		
+		let startVideo = document.querySelector('.startVideo');
+		let stopVideo = document.querySelector('.stopVideo');
+		let playVideo = document.querySelector('.playVideo');
+
+		// 录制视频
+		startVideo.onclick = function () {  
+			startRecord(true);
+		}
+		stopVideo.onclick = function () {  
+			stopRecord();
+		}
+		playVideo.onclick = function () {  
+			playRecord();
+		}
+
+	</script>
+</body>
+</html>
