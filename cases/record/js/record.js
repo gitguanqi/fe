@@ -4,7 +4,7 @@
  * @version: v0.0.1
  * @Date: 2021-08-10 09:35:39
  * @LastEditors: fegq
- * @LastEditTime: 2021-08-10 11:08:53
+ * @LastEditTime: 2021-08-15 14:45:32
  */
 // 开启关闭媒体设备兼容
 const mediaUtils = {
