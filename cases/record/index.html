@@ -1,67 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>视频录制</title>
-	<style>
-		.set {
-			line-height: 35px;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webrtc练习</title>
 </head>
 <body>
-	<h1>视频录制</h1>
-	<p>视频录制小练习！</p>
+    <h1>webrtc练习</h1>
+    <p>本练习主要是录制音频和视频流</p>
+    <div>
+        <p>录制音频流</p>
+        <audio controls src=""></audio><br>
+        <video controls src="" style="width: 100%;"></video>
+    </div><br>
+    <button id="start">开始音频</button>
+    <button id="stop">结束音频</button>
+    <button id="play">播放音频</button><br><br>
+    <button id="startVideo">开始视频</button>
+    <button id="stopVideo">结束视频</button>
+    <button id="playVideo">播放视频</button>
 	
-	<div class="set">
-		<button class="start">开始录制语音</button>
-		<button class="stop">停止语音录制</button>
-		<button class="play">播放语音</button>
-	</div>
-	
-	<div class="set">
-		<button class="startVideo">开始录制视频</button>
-		<button class="stopVideo">停止视频录制</button>
-		<button class="playVideo">播放视频</button>
-	</div>
+	<script src="js/record.js"></script>
 
-	<div id="record"></div>
-	
-	<script src="./js/record.min.js"></script>
-	<script>
-		let startBtn = document.querySelector('.start');
-		let stopBtn = document.querySelector('.stop');
-		let playBtn = document.querySelector('.play');
+    <script>
 
-		// 录制音频
-		startBtn.onclick = function () {  
-			startRecord(false);
-		}
-		stopBtn.onclick = function () {  
-			stopRecord();
-		}
-		playBtn.onclick = function () {  
-			playRecord();
-		}
+        let audioStart = document.querySelector('#start');
+        let audioStop = document.querySelector('#stop');
+        let audioPlay = document.querySelector('#play');
+        let startVideo = document.querySelector('#startVideo');
+        let stopVideo = document.querySelector('#stopVideo');
+        let playVideo = document.querySelector('#playVideo');
 
-		
-		let startVideo = document.querySelector('.startVideo');
-		let stopVideo = document.querySelector('.stopVideo');
-		let playVideo = document.querySelector('.playVideo');
+        audioStart.onclick = function () {  
+            start('audio');
+        }
 
-		// 录制视频
-		startVideo.onclick = function () {  
-			startRecord(true);
-		}
-		stopVideo.onclick = function () {  
-			stopRecord();
-		}
-		playVideo.onclick = function () {  
-			playRecord();
-		}
+        audioStop.onclick = function () {  
+            stop('audio');
+        }
 
-	</script>
+        audioPlay.onclick = function () {  
+            document.querySelector('audio').play();
+        }
+
+        startVideo.onclick = function () {  
+            start('video');
+        }
+
+        stopVideo.onclick = function () {  
+            stop('video');
+        }
+
+        playVideo.onclick = function () {  
+            document.querySelector('video').play();
+        }
+        
+    </script>
 </body>
 </html>
