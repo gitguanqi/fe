@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://static.guanqi.xyz/cdn/opensans/0.0.1/css/opensans.min.css">
     <script src="./assets/js/matomo.js"></script>
     <link rel="stylesheet" href="./assets/css/reset.min.css">
-    <link rel="stylesheet" href="./assets/css/main.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
     <script src="https://static.guanqi.xyz/cdn/axios/0.19.2/axios.min.js"></script>
 </head>
 
@@ -21,7 +21,7 @@
     </noscript>
     <div class="demo">
         <div class="demo-nav">
-            <div class="demo-nav-title"><a class="site-title" href="./">前端实验室</a> <span class="demo-nav-exit"><i
+            <div class="demo-nav-title"><i class="fa fa-cube"></i><a class="site-title" href="./">前端实验室</a> <span class="demo-nav-exit"><i
                         class="fa fa-sign-out-alt"></i></span></div>
             <ul class="demo-nav-content">
                 <li><a href="#projects"><i class="fa fa-cube"></i> <span>项目精选</span></a></li>
@@ -31,10 +31,15 @@
                 <li><a href="#friend-link"><i class="fa fa-tags"></i> <span>友情链接</span></a></li>
             </ul>
         </div>
-        <div class="demo-nav-m"><span class="demo-show-nav"><i class="fa fa-bars"></i> </span><a href="./">前端实验室</a>
+        <div class="demo-nav-m"><span class="demo-show-nav"><i class="fa fa-bars"></i> </span><a href="./"><i class="fa fa-cube"></i>前端实验室</a>
             <b></b></div>
         <div class="demo-content">
-            <div class="demo-content-all"><span>总计：<strong id="count">12</strong>个精选。</span></div>
+            <div class="demo-content-all">
+                <span>总计：<strong id="count">12</strong>个精选。</span>
+                <div class="demo-content-search">
+                    <input type="search" name="keyword" placeholder="搜索Demo"><i class=""></i>
+                </div>
+            </div>
             <div class="demo-content-item">
                 <h3 class="demo-content-item-title" id="projects">项目精选(<span class="count">0</span>)</h3>
                 <ul class="demo-content-item-ls clearFix"></ul>
@@ -55,6 +60,10 @@
                 <h3 class="demo-content-item-title" id="friend-link">友情链接(<span class="count">0</span>)</h3>
                 <ul class="demo-content-item-ls clearFix"></ul>
             </div>
+            <div class="demo-item-search">
+                <h3 class="demo-content-item-title" id="friend-link">搜索结果(<span class="count" id="search-count">0</span>)</h3>
+                <ul class="demo-content-item-ls clearFix"></ul>
+            </div>
             <div class="demo-foot">
                 <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="知识共享许可协议"
                             style="border-width:0" src="./assets/img/share.png"></a>本作品采用<a rel="license"
@@ -67,7 +76,7 @@
                     src="./assets/img/forkme_right_darkblue.png" alt="Fork me on GitHub"></a></div>
     </div>
     <script src="./assets/js/gjs.min.js"></script>
-    <script src="./assets/js/main.min.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

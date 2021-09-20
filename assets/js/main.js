@@ -7,10 +7,12 @@
 let siteTitle = document.querySelector('.site-title');
 let counts = document.querySelectorAll('.count');
 let content = document.querySelector('.demo-content');
+let search = document.querySelector('.demo-content-search');
 let count = document.querySelector('#count');
 let navLis = document.querySelectorAll('.demo-nav-content li a');
 let contents = document.querySelectorAll('.demo-content-item');
 let contentItem = document.querySelectorAll('.demo-content-item-ls');
+let searchContent = document.querySelector('.demo-item-search');
 let host = location.origin + location.pathname;
 
 // 到顶部
@@ -18,6 +20,9 @@ let goTopBtn = document.querySelector('.demo-go-top');
 let showNav = document.querySelector('.demo-nav-m');
 let demoNav = document.querySelector('.demo-nav');
 let navExit = document.querySelector('.demo-nav-exit');
+
+// 搜索事件
+search.addEventListener('input', searchDemo, false);
 
 // 获取数据
 getData();
@@ -38,6 +43,59 @@ function getData () {
     .catch(function(err) {
         throw new Error(err);
     })
+}
+
+// 显示搜索框
+function searchDemo (e) {  
+    let keywords = e.target.value;
+    if (keywords == '') {
+        for (const item of contents) {
+            item.style.display = 'block';
+        }
+        searchContent.style.display = 'none';
+    } else {
+        for (const item of contents) {
+            item.style.display = 'none';
+        }
+        searchContent.style.display = 'block';
+        getSearch(keywords);
+    }
+}
+
+// 获取搜索内容
+async function getSearch (keywords) {  
+    let data = await axios.get(host + '/assets/mock/list.json');
+    let all = data.data.data.v1;
+    let searchArr = [];
+    if (all.code == 200) {
+        let list = all.data.list;
+        for (const item of list) {
+            if (item.name.indexOf(keywords) > -1) {
+                searchArr.push(item);
+            }
+        }
+        showSearchData(searchArr);
+    }
+}
+
+// 显示搜索数据
+function showSearchData (list) {
+    let contentItem = document.querySelector('.demo-item-search .demo-content-item-ls');
+    let searchCount = document.getElementById('search-count');
+    contentItem.innerHTML = '';
+    for (let i = 0; i < list.length; i++) {
+        const element = list[i];
+        let tags = element.tags.split(',').join(', ');
+        if (element.href.indexOf('http') > -1 || element.href.indexOf('https') > -1) {
+            element.href = host + 'link/?url=' + element.href;
+        } else {
+            element.href = host + element.href;
+        }
+        let str = '<li><a href="' + element.href + '" target="_blank" title=" ' + element.description + '"><div class="demo-item-img"><img class="lazyimg" src="./assets/img/holder.png" data-src="' + './' + element.picUrl + '" alt="' + element.name + '"></div><div class="project-bot"><span class="project-title">' + element.name + '</span><span class="project-des">' + element.description + '</span><span class="project-tags"><i class="fa fa-tags"></i>' + tags + '</span></div></a></li>';
+        contentItem.innerHTML += str;
+    }
+    searchCount.innerText = list.length;
+    lazyLoad();
 }
 
 // 显示数据
