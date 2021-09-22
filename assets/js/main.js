@@ -87,7 +87,7 @@ function showSearchData (list) {
         const element = list[i];
         let tags = element.tags.split(',').join(', ');
         if (element.href.indexOf('http') > -1 || element.href.indexOf('https') > -1) {
-            element.href = `/link/check/?target=${encodeURIComponent(element.href)}`;
+            element.href = `https://fe.guanqi.xyz/link/check/?target=${encodeURIComponent(element.href)}`;
         } else {
             element.href = `${host}${element.href}`;
         }
@@ -107,7 +107,7 @@ function showData (list) {
         let cIndex = element.cid.toString().split('')[0] - 1;
         let tags = element.tags.split(',').join(', ');
         if (element.href.indexOf('http') > -1 || element.href.indexOf('https') > -1) {
-            element.href = `/link/check/?target=${encodeURIComponent(element.href)}`;
+            element.href = `https://fe.guanqi.xyz/link/check/?target=${encodeURIComponent(element.href)}`;
         } else {
             element.href = `${host}${element.href}`;
         }
