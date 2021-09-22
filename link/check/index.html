@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安全中心</title>
+    <script src="https://static.guanqi.xyz/cdn/isIe/0.0.1/isIe.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        .safe {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            height: 100vh;
+            background: #f8f8f8;
+            overflow: hidden;
+        }
+        .safe-inner {
+            margin-top: 200px;
+            width: 450px;
+            height: auto;
+        }
+        .safe-top {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+        }
+        .safe-top img {
+            margin-right: 10px;
+            display: inline-block;
+            width: 57.6px;
+            height: 46px;
+        }
+        .safe-top span {
+            color: #222;
+            font-size: 28px;
+        }
+        .safe-bot {
+            box-sizing: border-box;
+            padding: 20px 30px;
+            width: 100%;
+            height: auto;
+            background: #fff;
+            box-shadow: 0 0 10px #eee;
+            border: 1px solid #aaa;
+            border-radius: 10px;
+        }
+        .safe-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            width: 100%;
+            height: 35px;
+            font-size: 16px;
+            color: #555;
+            font-weight: bold;
+            background: rgba(211, 45, 45, .12);
+            border-radius: 4px;
+        }
+        .safe-title img {
+            margin-right: 20px;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+        }
+        .safe-content {
+            width: 100%;
+            height: auto;
+        }
+        .safe-des small {
+            font-size: 14px;
+            line-height: 2;
+            color: #444;
+        }
+        .safe-link {
+            line-height: 2;
+            font-size: 14px;
+            color: rgba(211, 45, 45, .92);
+        }
+        .safe-go {
+            margin-left: auto;
+            display: block;
+            padding: 5px 10px;
+            background: transparent;
+            border-radius: 12px;
+            border: 1px solid crimson;
+            color: crimson;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="safe">
+        <div class="safe-inner">
+            <div class="safe-top">
+                <img src="../../assets/img/logo.png" alt="安全中心">
+                <span>前端实验室</span>
+            </div>
+            <div class="safe-bot">
+                <div class="safe-title">
+                    <img src="../../assets/img/warning.png" alt="">
+                    请注意您的账号和财产安全
+                </div>
+                <div class="safe-content">
+                    <p class="safe-des">
+                        <small>您即将离开本站，去往：</small><span class="safe-link"></span>
+                    </p>
+                    <button class="safe-go">继续</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let baseUrl = location.host.indexOf('localhost') > -1 ? 'http://localhost:4001/link/?url=' : 'https://fe.guanqi.xyz/link/?url='
+        let safeLink = document.querySelector('.safe-link');
+        let safeGo = document.querySelector('.safe-go');
+        let targetUrl = decodeURIComponent(location.search.split('?')[1].split('=')[1]);
+        if (targetUrl) {
+            safeLink.innerText = targetUrl;
+        }
+        safeGo.addEventListener('click', goLink, false);
+        function goLink () {  
+            let url = `${baseUrl}${encodeURIComponent(targetUrl)}`;
+            location.href = url;
+        }
+    </script>
+</body>
+</html>

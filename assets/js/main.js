@@ -87,9 +87,9 @@ function showSearchData (list) {
         const element = list[i];
         let tags = element.tags.split(',').join(', ');
         if (element.href.indexOf('http') > -1 || element.href.indexOf('https') > -1) {
-            element.href = host + 'link/?url=' + element.href;
+            element.href = `/link/check/?target=${encodeURIComponent(element.href)}`;
         } else {
-            element.href = host + element.href;
+            element.href = `${host}${element.href}`;
         }
         let str = '<li><a href="' + element.href + '" target="_blank" title=" ' + element.description + '"><div class="demo-item-img"><img class="lazyimg" src="./assets/img/holder.png" data-src="' + './' + element.picUrl + '" alt="' + element.name + '"></div><div class="project-bot"><span class="project-title">' + element.name + '</span><span class="project-des">' + element.description + '</span><span class="project-tags"><i class="fa fa-tags"></i>' + tags + '</span></div></a></li>';
         contentItem.innerHTML += str;
@@ -107,9 +107,9 @@ function showData (list) {
         let cIndex = element.cid.toString().split('')[0] - 1;
         let tags = element.tags.split(',').join(', ');
         if (element.href.indexOf('http') > -1 || element.href.indexOf('https') > -1) {
-            element.href = host + 'link/?url=' + element.href;
+            element.href = `/link/check/?target=${encodeURIComponent(element.href)}`;
         } else {
-            element.href = host + element.href;
+            element.href = `${host}${element.href}`;
         }
         let str = '<li><a href="' + element.href + '" target="_blank" title=" ' + element.description + '"><div class="demo-item-img"><img class="lazyimg" src="./assets/img/holder.png" data-src="' + './' + element.picUrl + '" alt="' + element.name + '"></div><div class="project-bot"><span class="project-title">' + element.name + '</span><span class="project-des">' + element.description + '</span><span class="project-tags"><i class="fa fa-tags"></i>' + tags + '</span></div></a></li>';
         contentItem[cIndex].innerHTML += str;

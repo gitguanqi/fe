@@ -65,8 +65,7 @@
         <div></div>
     </div>
     <script>
-        let url = window.location.search;
-        url = url.slice(1, url.length).split('=')[1];
+        let url = decodeURIComponent(location.search.split('?')[1].split('=')[1]);
         if (url && url.indexOf('http') > -1) {
             setTimeout(function(){
                 location = url;
