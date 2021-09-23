@@ -118,8 +118,7 @@
     border: 1px solid #ccc;
     box-shadow: 0 0 5px #ccc;
     outline: none;
-    background-color: none;
-
+    background: none;
 }
 
 .demo-content .demo-content-search input:focus,
@@ -327,15 +326,16 @@
         position: fixed;
         top: 0;
         left: -100%;
-        width: 100%;
+        width: 77%;
         height: 100vh;
         background-color: #111;
         transition: all .3s;
-        z-index: 111;
+        z-index: 222;
     }
 
     .demo-nav-title {
         position: relative;
+        padding-left: 3.125rem;
         width: 100%;
         height: 4.125rem;
         line-height: 4.125rem;
