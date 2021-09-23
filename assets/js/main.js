@@ -26,27 +26,28 @@ search.addEventListener('input', searchDemo, false);
 
 // 获取数据
 getData();
-function getData () {
+
+function getData() {
     let data = axios.get(host + '/assets/mock/list.json');
-    data.then(function(res) {
-        if (res.status === 200) {
-            let data = res;
-            document.title = data.data.name + '- 探索前端新技术';
-            siteTitle.innerText = data.data.name;
-            let list = data.data.data.v1.data.list;
-            showData(list);
-        } else {
-            let list = [];
-            showData(list);
-        }
-    })
-    .catch(function(err) {
-        throw new Error(err);
-    })
+    data.then(function (res) {
+            if (res.status === 200) {
+                let data = res;
+                document.title = data.data.name + '- 探索前端新技术';
+                siteTitle.innerText = data.data.name;
+                let list = data.data.data.v1.data.list;
+                showData(list);
+            } else {
+                let list = [];
+                showData(list);
+            }
+        })
+        .catch(function (err) {
+            throw new Error(err);
+        })
 }
 
 // 显示搜索框
-function searchDemo (e) {  
+function searchDemo(e) {
     let keywords = e.target.value;
     if (keywords == '') {
         for (const item of contents) {
@@ -63,7 +64,7 @@ function searchDemo (e) {
 }
 
 // 获取搜索内容
-async function getSearch (keywords) {  
+async function getSearch(keywords) {
     let data = await axios.get(host + '/assets/mock/list.json');
     let all = data.data.data.v1;
     let searchArr = [];
@@ -79,7 +80,7 @@ async function getSearch (keywords) {
 }
 
 // 显示搜索数据
-function showSearchData (list) {
+function showSearchData(list) {
     let contentItem = document.querySelector('.demo-item-search .demo-content-item-ls');
     let searchCount = document.getElementById('search-count');
     contentItem.innerHTML = '';
@@ -91,7 +92,7 @@ function showSearchData (list) {
         } else {
             element.href = `${host}${element.href}`;
         }
-        let str = '<li><a href="' + element.href + '" target="_blank" title=" ' + element.description + '"><div class="demo-item-img"><img class="lazyimg" src="./assets/img/holder.png" data-src="' + './' + element.picUrl + '" alt="' + element.name + '"></div><div class="project-bot"><span class="project-title">' + element.name + '</span><span class="project-des">' + element.description + '</span><span class="project-tags"><i class="fa fa-tags"></i>' + tags + '</span></div></a></li>';
+        let str = '<li><a href="' + element.href + '" title=" ' + element.description + '"><div class="demo-item-img"><img class="lazyimg" src="./assets/img/holder.png" data-src="' + './' + element.picUrl + '" alt="' + element.name + '"></div><div class="project-bot"><span class="project-title">' + element.name + '</span><span class="project-des">' + element.description + '</span><span class="project-tags"><i class="fa fa-tags"></i>' + tags + '</span></div></a></li>';
         contentItem.innerHTML += str;
     }
     searchCount.innerText = list.length;
@@ -99,7 +100,7 @@ function showSearchData (list) {
 }
 
 // 显示数据
-function showData (list) {
+function showData(list) {
     let contentItem = document.querySelectorAll('.demo-content-item-ls');
 
     for (let i = 0; i < list.length; i++) {
@@ -111,7 +112,7 @@ function showData (list) {
         } else {
             element.href = `${host}${element.href}`;
         }
-        let str = '<li><a href="' + element.href + '" target="_blank" title=" ' + element.description + '"><div class="demo-item-img"><img class="lazyimg" src="./assets/img/holder.png" data-src="' + './' + element.picUrl + '" alt="' + element.name + '"></div><div class="project-bot"><span class="project-title">' + element.name + '</span><span class="project-des">' + element.description + '</span><span class="project-tags"><i class="fa fa-tags"></i>' + tags + '</span></div></a></li>';
+        let str = '<li><a href="' + element.href + '" title=" ' + element.description + '"><div class="demo-item-img"><img class="lazyimg" src="./assets/img/holder.png" data-src="' + './' + element.picUrl + '" alt="' + element.name + '"></div><div class="project-bot"><span class="project-title">' + element.name + '</span><span class="project-des">' + element.description + '</span><span class="project-tags"><i class="fa fa-tags"></i>' + tags + '</span></div></a></li>';
         contentItem[cIndex].innerHTML += str;
     }
     for (let i = 0; i < contentItem.length; i++) {
@@ -129,17 +130,17 @@ function lazyLoad() {
     let clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     for (var i = n; i < lazyImgs.length; i++) {
-      if (lazyImgs[i].offsetTop < (clientHeight + scrollTop)) {
-        let secImgs = lazyImgs[i];
-        if (secImgs.getAttribute('src') === './assets/img/holder.png') {
-            secImgs.src = secImgs.getAttribute('data-src');
+        if (lazyImgs[i].offsetTop < (clientHeight + scrollTop)) {
+            let secImgs = lazyImgs[i];
+            if (secImgs.getAttribute('src') === './assets/img/holder.png') {
+                secImgs.src = secImgs.getAttribute('data-src');
+            }
         }
-      }
-      n = i + 1;
+        n = i + 1;
     }
 }
 
-window.addEventListener('scroll', function(){
+window.addEventListener('scroll', function () {
     // 懒加载
     lazyLoad();
     // 到顶部
@@ -153,20 +154,21 @@ window.addEventListener('scroll', function(){
     for (let i = 0; i < contents.length; i++) {
         const element = contents[i].offsetTop - 50;
         if (element <= scrollTop) {
-          for (let j = 0; j < navLis.length; j++) {
-            navLis[j].className = '';
-          }
-          navLis[i].className = 'active';
+            for (let j = 0; j < navLis.length; j++) {
+                navLis[j].className = '';
+            }
+            navLis[i].className = 'active';
         }
-      }
+    }
 }, false);
 
 // 点击到对应
 goNavContent();
-function goNavContent () {
+
+function goNavContent() {
     for (let i = 0; i < navLis.length; i++) {
         const element = navLis[i];
-        element.addEventListener('click', function(e) {
+        element.addEventListener('click', function (e) {
             let contentTop = 0;
             if (contents[i]) {
                 contentTop = contents[i].offsetTop;
@@ -179,17 +181,18 @@ function goNavContent () {
 
 // 到顶部
 $g.addEvent(goTopBtn, 'click', goTop, false);
-function goTop () {
+
+function goTop() {
     let timer = setInterval(function () {
-    let top = document.documentElement.scrollTop || document.body.scrollTop;
-    let speed = 0;
-    if (top > 0) {
-        speed = Math.floor(-top / 6);
-    }
-    if (top == 0) {
-        clearInterval(timer);
-    }
-    document.documentElement.scrollTop = document.body.scrollTop = top + speed;
+        let top = document.documentElement.scrollTop || document.body.scrollTop;
+        let speed = 0;
+        if (top > 0) {
+            speed = Math.floor(-top / 6);
+        }
+        if (top == 0) {
+            clearInterval(timer);
+        }
+        document.documentElement.scrollTop = document.body.scrollTop = top + speed;
     }, 10);
 }
 
@@ -197,15 +200,17 @@ function goTop () {
 if (navigator.userAgent.indexOf('Mobile') > -1) {
     if (showNav) {
         showNav.addEventListener('click', showSilderNav, false);
-        function showSilderNav () {
+
+        function showSilderNav() {
             demoNav.style.left = 0;
         }
     }
     if (navExit) {
         navExit.addEventListener('click', hideSilderNav, false);
-        function hideSilderNav () {
+
+        function hideSilderNav() {
             demoNav.style.left = -100 + '%';
-        }    
+        }
     }
 }
 

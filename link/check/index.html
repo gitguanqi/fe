@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>安全中心</title>
+    <link rel="stylesheet" href="https://static.guanqi.xyz/cdn/opensans/0.0.1/css/opensans.min.css">
     <script src="https://static.guanqi.xyz/cdn/isIe/0.0.1/isIe.min.js"></script>
+    <script src="../../assets/js/device.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -97,16 +99,49 @@
             font-size: 14px;
             cursor: pointer;
         }
-        @media all and (max-width: 375px) {
+        @media all and (max-width: 768px) {
             .safe-inner {
-                margin-top: 180px;
-                width: 350px;
+                margin-top: 7.875rem;
+                width: 90%;
             }
-        }
-        @media all and (max-width: 320px) {
-            .safe-inner {
-                margin-top: 160px;
-                width: 305px;
+            .safe-top {
+                margin-bottom: 1.5625rem;
+                height: 3.125rem;
+            }
+            .safe-top img {
+                margin-right: .625rem;
+                width: 3.6rem;
+                height: 2.875rem;
+            }
+            .safe-top span {
+                font-size: 1.625rem;
+            }
+            .safe-bot {
+                padding: 1.25rem 1.875rem;
+                box-shadow: 0 0 .625rem #eee;
+                border: .0625rem solid #aaa;
+                border-radius: .625rem;
+            }
+            .safe-title {
+                height: 2.1875rem;
+                font-size: 1rem;
+                border-radius: .25rem;
+            }
+            .safe-title img {
+                margin-right: 1.25rem;
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+            .safe-des small {
+                font-size: .875rem;
+            }
+            .safe-link {
+                font-size: .875rem;
+            }
+            .safe-go {
+                padding: .3125rem .625rem;
+                border-radius: .75rem;
+                font-size: .875rem;
             }
         }
     </style>
@@ -133,17 +168,21 @@
         </div>
     </div>
     <script>
-        let baseUrl = location.host.indexOf('localhost') > -1 ? 'http://localhost:4001/link/?url=' : 'https://fe.guanqi.xyz/link/?url='
-        let safeLink = document.querySelector('.safe-link');
-        let safeGo = document.querySelector('.safe-go');
-        let targetUrl = decodeURIComponent(location.search.split('?')[1].split('=')[1]);
-        if (targetUrl) {
-            safeLink.innerText = targetUrl;
-        }
-        safeGo.addEventListener('click', goLink, false);
-        function goLink () {  
-            let url = `${baseUrl}${encodeURIComponent(targetUrl)}`;
-            location.href = url;
+        if (location.search) {
+            let baseUrl = location.host.indexOf('localhost') > -1 ? 'http://localhost:4001/link/?url=' : 'https://fe.guanqi.xyz/link/?url='
+            let safeLink = document.querySelector('.safe-link');
+            let safeGo = document.querySelector('.safe-go');
+            let targetUrl = decodeURIComponent(location.search.split('?')[1].split('=')[1]);
+            if (targetUrl) {
+                safeLink.innerText = targetUrl;
+            }
+            safeGo.addEventListener('click', goLink, false);
+            function goLink () {  
+                let url = `${baseUrl}${encodeURIComponent(targetUrl)}`;
+                location.href = url;
+            }
+        } else {
+            location.href = '/';
         }
     </script>
 </body>
