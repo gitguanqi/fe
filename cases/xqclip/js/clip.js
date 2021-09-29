@@ -2,7 +2,7 @@
  * @Author: fegq
  * @Date: 2021-09-29 06:53:44
  * @LastEditors: fegq
- * @LastEditTime: 2021-09-29 14:46:43
+ * @LastEditTime: 2021-09-29 15:02:39
  * @Description: This is a file comment!
  * @Version: v0.0.1
  */
@@ -136,7 +136,7 @@ XqClip.prototype.initElem = function () {
             <small class="clip-img-scale"></small>
         </div>
         <canvas id="clip-temp"></canvas>
-    `;
+    </div>`;
     this.getElem();
 }
 
