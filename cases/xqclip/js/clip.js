@@ -2,9 +2,9 @@
  * @Author: fegq
  * @Date: 2021-09-29 06:53:44
  * @LastEditors: fegq
- * @LastEditTime: 2021-09-29 15:02:39
+ * @LastEditTime: 2021-09-29 15:06:55
  * @Description: This is a file comment!
- * @Version: v0.0.1
+ * @Version: v0.0.2
  */
 // XqClip裁切插件
 function XqClip(options) {
@@ -121,8 +121,8 @@ XqClip.prototype.initElem = function () {
         <canvas id="clip-img" class="clip-bg"></canvas>
         <div class="clip-img-shadow clip-img-shadow-top"></div>
         <div class="clip-img-shadow clip-img-shadow-right"></div>
-        <div class="clip-img-shadow clip-img-shadow-bottom""></div>
-        <div class="clip-img-shadow clip-img-shadow-left""></div>
+        <div class="clip-img-shadow clip-img-shadow-bottom"></div>
+        <div class="clip-img-shadow clip-img-shadow-left"></div>
         <div class="clip-img-area no-pos" data-pos="pos(0,0)"  data-size="wh(0,0)">
             <span></span>
             <span></span>
