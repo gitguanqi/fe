@@ -211,6 +211,17 @@
                         "update_time": "2019-10-18"
                     },
                     {
+                        "cid": 2010,
+                        "name": "canvas图片裁切",
+                        "description": "canvas图片裁切是一个关于html5中canvas图片裁切的练习。",
+                        "href": "cases/xqclip/",
+                        "picUrl": "./assets/img/cover/xqclip.jpg",
+                        "type": "html",
+                        "tags": "html5,canvas,图片裁切",
+                        "create_time": "2021-09-29",
+                        "update_time": "2021-09-29"
+                    },
+                    {
                         "cid": 3001,
                         "name": "博客文章组件",
                         "description": "博客文章组件是一个关于css布局练习的博客站点首页的练习案例。",
