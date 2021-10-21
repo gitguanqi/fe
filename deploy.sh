@@ -15,6 +15,5 @@ git commit -m "${commits}"
 # 更新到远程仓库
 git push origin master -f
 git push github master -f
-git push test master -f
 
 exit 0
