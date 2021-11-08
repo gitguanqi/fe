@@ -102,14 +102,25 @@
                     },
                     {
                         "cid": 1012,
-                        "name": "【原生】在线代码编辑器",
-                        "description": "【原生】在线代码编辑器是一个前端代码在线编辑的工具，提供html,css,js以及页面预览，与控制台报错信息展示等功能。",
+                        "name": "【Vuejs】在线代码编辑器",
+                        "description": "【Vuejs】在线代码编辑器是一个前端代码在线编辑的工具，提供html,css,js以及页面预览，与控制台报错信息展示等功能。",
                         "href": "https://code.guanqi.xyz/",
                         "picUrl": "./assets/img/cover/code.jpg",
                         "type": "project",
-                        "tags": "html,editor",
+                        "tags": "vuejs,editor",
                         "create_time": "2021-08-29",
                         "update_time": "2021-08-29"
+                    },
+                    {
+                        "cid": 1013,
+                        "name": "【Vuejs】小奇音乐盒",
+                        "description": "【vuejs】小奇音乐盒是一个提供在线听歌的网址，提供歌曲搜索，播放等功能。",
+                        "href": "https://y.guanqi.xyz/",
+                        "picUrl": "./assets/img/cover/xqmusic.jpg",
+                        "type": "project",
+                        "tags": "vuejs,music",
+                        "create_time": "2021-11-08",
+                        "update_time": "2021-11-08"
                     },
                     {
                         "cid": 2001,
