@@ -102,8 +102,8 @@
                     },
                     {
                         "cid": 1009,
-                        "name": "【Vuejs】在线代码编辑器",
-                        "description": "【Vuejs】在线代码编辑器是一个前端代码在线编辑的工具，提供html,css,js以及页面预览，与控制台报错信息展示等功能。",
+                        "name": "【Vuejs】代码客栈",
+                        "description": "【Vuejs】代码客栈是一个前端代码在线编辑的工具，提供html,css,js，markdown以及页面预览，与控制台报错信息展示等功能。",
                         "href": "https://code.guanqi.xyz/",
                         "picUrl": "./assets/img/cover/code.jpg",
                         "type": "project",
