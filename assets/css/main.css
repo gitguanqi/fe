@@ -351,6 +351,12 @@ header {
 }
 
 @media all and (max-width: 750px) and (min-width: 319px) {
+    header {
+        position: fixed;
+        top: 0;
+        left: -100%;
+    }
+
     .demo-nav {
         position: fixed;
         top: 0;
