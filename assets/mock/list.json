@@ -35,7 +35,7 @@
                         "update_time": "2019-10-18"
                     },
                     {
-                        "cid": 1006,
+                        "cid": 1003,
                         "name": "【nodejs】小奇便签",
                         "description": "小奇便签是一个关于nodejs学习的，包括各种nodejs和express框架的内容，包括便签分类用户接口用户管理的一个案例站点。",
                         "href": "https://github.com/gitguanqi/xqnote",
@@ -46,7 +46,7 @@
                         "update_time": "2019-10-18"
                     },
                     {
-                        "cid": 1007,
+                        "cid": 1004,
                         "name": "【APICloud】Markerapp",
                         "description": "Markerapp是一个关于混合式App开发的博客写作app，包括登录，注册，找回密码，密保问题，查看个人主页，写博客，查看博客，关注，评论，点赞等功能的一个手机应用。",
                         "href": "https://github.com/gitguanqi/markerapp",
@@ -57,7 +57,7 @@
                         "update_time": "2019-10-18"
                     },
                     {
-                        "cid": 1008,
+                        "cid": 1005,
                         "name": "【vuejs】好物图库",
                         "description": "好物图库是基于vite2+vue3开发的一个各种分类的图片游览库。",
                         "href": "https://pics.guanqi.xyz/",
@@ -68,7 +68,7 @@
                         "update_time": "2019-10-18"
                     },
                     {
-                        "cid": 1009,
+                        "cid": 1006,
                         "name": "【vuejs】小奇工具箱",
                         "description": "【vuejs】小奇工具箱是一个vuejs的常用工具项目。",
                         "href": "https://tool.guanqi.xyz/",
@@ -79,7 +79,7 @@
                         "update_time": "2019-10-18"
                     },
                     {
-                        "cid": 1010,
+                        "cid": 1007,
                         "name": "【vuejs】小奇后台",
                         "description": "【vuejs】小奇后台是一个基于vuejs+elementui搭建的工具箱后台管理系统项目。",
                         "href": "https://tms.guanqi.xyz/",
@@ -90,7 +90,7 @@
                         "update_time": "2019-10-18"
                     },
                     {
-                        "cid": 1011,
+                        "cid": 1008,
                         "name": "【nodejs】KDAPI",
                         "description": "【nodejs】KDAPI是一个nodejs+mysql+redis搭建的api接口服务器项目。",
                         "href": "https://api.guanqi.xyz/",
@@ -101,7 +101,7 @@
                         "update_time": "2019-10-18"
                     },
                     {
-                        "cid": 1012,
+                        "cid": 1009,
                         "name": "【Vuejs】在线代码编辑器",
                         "description": "【Vuejs】在线代码编辑器是一个前端代码在线编辑的工具，提供html,css,js以及页面预览，与控制台报错信息展示等功能。",
                         "href": "https://code.guanqi.xyz/",
@@ -112,7 +112,7 @@
                         "update_time": "2021-08-29"
                     },
                     {
-                        "cid": 1013,
+                        "cid": 1010,
                         "name": "【Vuejs】小奇音乐盒",
                         "description": "【vuejs】小奇音乐盒是一个提供在线听歌的网址，提供歌曲搜索，播放等功能。",
                         "href": "https://y.guanqi.xyz/",
@@ -121,6 +121,17 @@
                         "tags": "vuejs,music",
                         "create_time": "2021-11-08",
                         "update_time": "2021-11-08"
+                    },
+                    {
+                        "cid": 1011,
+                        "name": "【Vuejs】好奇博客",
+                        "description": "【Vuejs】好奇博客是一个在线博客平台，提供公开博客文章访问，登录评论，分享搜索等功能。",
+                        "href": "https://blog.guanqi.xyz/dlamzj",
+                        "picUrl": "./assets/img/cover/xqblog.jpg",
+                        "type": "project",
+                        "tags": "vuejs,blog",
+                        "create_time": "2021-08-29",
+                        "update_time": "2021-08-29"
                     },
                     {
                         "cid": 2001,
