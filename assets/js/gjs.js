@@ -630,18 +630,15 @@
         if (xhr.status === 200) {
           //success
           result = {
-            code: this.status,
+            code: 200,
             msg: 'get_succ',
-            data: {
-              info: '获取成功!',
-              data: JSON.parse(this.response),
-            }
+            data: JSON.parse(this.response),
           }
           cb(result);
         } else {
           // failed
           result = {
-            code: this.status,
+            code: 101,
             msg: 'get_fail',
             data: {
               info: '获取失败!',

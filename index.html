@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>前端实验室 - 探索前端新技术</title>
-    <script src="https://static.guanqi.xyz/cdn/isIe/0.0.1/isIe.min.js"></script>
     <link
       href="https://static.guanqi.xyz/cdn/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
@@ -17,7 +16,6 @@
     <script src="./assets/js/matomo.js"></script>
     <link rel="stylesheet" href="./assets/css/reset.min.css" />
     <link rel="stylesheet" href="./assets/css/main.min.css" />
-    <script src="https://static.guanqi.xyz/cdn/axios/0.19.2/axios.min.js"></script>
     <script src="./assets/js/device.min.js"></script>
     <script src="./assets/js/html5shiv.min.js"></script>
     <script src="./assets/js/respond.min.js"></script>
@@ -27,111 +25,106 @@
     <noscript>
       <p>请启用javascript!</p>
     </noscript>
-    <header>
-      <nav class="demo-nav">
-        <div class="demo-nav-title">
-          <i class="fa fa-flask"></i
-          ><a class="site-title" href="./">前端实验室</a>
-          <span class="demo-nav-exit"><i class="fa fa-times"></i></span>
-        </div>
-        <ul class="demo-nav-content">
-          <li>
-            <a href="#projects"
-              ><i class="fa fa-flask"></i> <span>项目精选</span></a
-            >
-          </li>
-          <li>
-            <a href="#html-cases"
-              ><i class="fa fa-code"></i> <span>HTML案例</span></a
-            >
-          </li>
-          <li>
-            <a href="#css-cases"
-              ><i class="fa fa-terminal"></i> <span>CSS案例</span></a
-            >
-          </li>
-          <li>
-            <a href="#js-cases"
-              ><i class="fa fa-window-restore"></i> <span>JS案例</span></a
-            >
-          </li>
-          <li>
-            <a href="#friend-link"
-              ><i class="fa fa-tags"></i> <span>友情链接</span></a
-            >
-          </li>
-        </ul>
-      </nav>
-      <nav class="demo-nav-m">
-        <span class="demo-show-nav"><i class="fa fa-bars"></i> </span
-        ><a href="./"><i class="fa fa-flask"></i>前端实验室</a>
-        <b></b>
-      </nav>
-    </header>
-    <main class="demo-content">
-      <section class="demo-content-all">
-        <span>总计：<strong id="count">0</strong>个精选。</span>
-        <div class="demo-content-search">
-          <input type="search" name="keyword" placeholder="搜索Demo" /><i
-            class=""
-          ></i>
-        </div>
-      </section>
-      <section class="demo-content-item">
-        <h3 class="demo-content-item-title" id="projects">
-          项目精选(<span class="count">0</span>)
-        </h3>
-        <ul class="demo-content-item-ls clearFix"></ul>
-      </section>
-      <section class="demo-content-item">
-        <h3 class="demo-content-item-title" id="html-cases">
-          HTML案例(<span class="count">0</span>)
-        </h3>
-        <ul class="demo-content-item-ls clearFix"></ul>
-      </section>
-      <section class="demo-content-item">
-        <h3 class="demo-content-item-title" id="css-cases">
-          CSS案例(<span class="count">0</span>)
-        </h3>
-        <ul class="demo-content-item-ls clearFix"></ul>
-      </section>
-      <section class="demo-content-item">
-        <h3 class="demo-content-item-title" id="js-cases">
-          JS案例(<span class="count">0</span>)
-        </h3>
-        <ul class="demo-content-item-ls clearFix"></ul>
-      </section>
-      <section class="demo-content-item">
-        <h3 class="demo-content-item-title" id="friend-link">
-          友情链接(<span class="count">0</span>)
-        </h3>
-        <ul class="demo-content-item-ls clearFix"></ul>
-      </section>
-      <section class="demo-item-search">
-        <h3 class="demo-content-item-title" id="friend-link">
-          搜索结果(<span class="count" id="search-count">0</span>)
-        </h3>
-        <ul class="demo-content-item-ls clearFix"></ul>
-      </section>
-      <footer class="demo-foot">
-        <p>
-          &copy; 2017- 2021
-          <a href="./"><i class="fa fa-flask"></i>前端实验室</a> All Rights
-          Reserved.
-        </p>
-        <p>DESIGN BY <a href="./">FeLab</a></p>
-      </footer>
-    </main>
-    <aside>
-      <section class="demo-go-top"><i class="fa fa-chevron-up"></i></section>
-      <section class="demo-go-github">
-        <a href="https://github.com/gitguanqi/fe/" target="_blank"
-          ><img
-            src="./assets/img/forkme_right_darkblue.png"
-            alt="Fork me on GitHub"
-        /></a>
-      </section>
-    </aside>
+    <div class="demo">
+      <header>
+        <nav class="demo-nav">
+          <div class="demo-nav-title">
+            <i class="fa fa-flask"></i
+            ><a class="site-title" href="./">前端实验室</a>
+            <span class="demo-nav-exit"><i class="fa fa-times"></i></span>
+          </div>
+          <ul class="demo-nav-content">
+            <li>
+              <a href="#projects"
+                ><i class="fa fa-flask"></i> <span>项目精选</span></a
+              >
+            </li>
+            <li>
+              <a href="#html-cases"
+                ><i class="fa fa-code"></i> <span>HTML案例</span></a
+              >
+            </li>
+            <li>
+              <a href="#css-cases"
+                ><i class="fa fa-terminal"></i> <span>CSS案例</span></a
+              >
+            </li>
+            <li>
+              <a href="#js-cases"
+                ><i class="fa fa-window-restore"></i> <span>JS案例</span></a
+              >
+            </li>
+            <li>
+              <a href="#friend-link"
+                ><i class="fa fa-tags"></i> <span>友情链接</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+        <nav class="demo-nav-m">
+          <span class="demo-show-nav"><i class="fa fa-bars"></i> </span
+          ><a href="./"><i class="fa fa-flask"></i>前端实验室</a>
+          <b></b>
+        </nav>
+      </header>
+      <main class="demo-content">
+        <section class="demo-content-all">
+          <span>总计：<strong id="count">0</strong>个精选。</span>
+          <div class="demo-content-search">
+            <input type="search" name="keyword" placeholder="搜索Demo" /><i
+              class=""
+            ></i>
+          </div>
+        </section>
+        <section class="demo-content-item">
+          <h3 class="demo-content-item-title" id="projects">
+            项目精选(<span class="count">0</span>)
+          </h3>
+          <ul class="demo-content-item-ls clearFix"></ul>
+        </section>
+        <section class="demo-content-item">
+          <h3 class="demo-content-item-title" id="html-cases">
+            HTML案例(<span class="count">0</span>)
+          </h3>
+          <ul class="demo-content-item-ls clearFix"></ul>
+        </section>
+        <section class="demo-content-item">
+          <h3 class="demo-content-item-title" id="css-cases">
+            CSS案例(<span class="count">0</span>)
+          </h3>
+          <ul class="demo-content-item-ls clearFix"></ul>
+        </section>
+        <section class="demo-content-item">
+          <h3 class="demo-content-item-title" id="js-cases">
+            JS案例(<span class="count">0</span>)
+          </h3>
+          <ul class="demo-content-item-ls clearFix"></ul>
+        </section>
+        <section class="demo-content-item">
+          <h3 class="demo-content-item-title" id="friend-link">
+            友情链接(<span class="count">0</span>)
+          </h3>
+          <ul class="demo-content-item-ls clearFix"></ul>
+        </section>
+        <section class="demo-item-search">
+          <h3 class="demo-content-item-title" id="friend-link">
+            搜索结果(<span class="count" id="search-count">0</span>)
+          </h3>
+          <ul class="demo-content-item-ls clearFix"></ul>
+        </section>
+        <footer class="demo-foot">
+          <p>
+            &copy; 2017- 2021
+            <a href="./"><i class="fa fa-flask"></i>前端实验室</a> All Rights
+            Reserved.
+          </p>
+          <p>DESIGN BY <a href="./">FeLab</a></p>
+        </footer>
+      </main>
+      <aside class="demo-go-top">
+        <i class="fa fa-chevron-up"></i>
+      </aside>
+    </div>
     <script src="./assets/js/gjs.min.js"></script>
     <script src="./assets/js/main.min.js"></script>
   </body>

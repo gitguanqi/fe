@@ -45,6 +45,7 @@ a {
   float: left;
   width: 590px;
   height: 470px;
+  background: #ccc;
 }
 
 @keyframes moveLi {
@@ -107,6 +108,7 @@ a {
 }
 
 .btns button {
+  display: inline-block;
   width: 20px;
   height: 20px;
   background-color: #fff;
