@@ -70,6 +70,12 @@ a {
   text-overflow: ellipsis;
 }
 
+.text-flow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* 超出多行省略 */
 .overflow-more {
   display: -webkit-box;

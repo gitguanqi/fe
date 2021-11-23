@@ -16,16 +16,18 @@
     clear: both;
 }
 
-.demo {
-    width: 100%;
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 18%;
+    height: 100vh;
+    z-index: 99;
 }
 
 .demo-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 18%;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: #111;
 }
 
@@ -64,9 +66,8 @@
 }
 
 .demo-nav-content li {
-    margin: 10px auto;
-    height: 40px;
-    line-height: 40px;
+    height: 50px;
+    line-height: 50px;
     border-bottom: 1px solid #333;
 }
 
@@ -91,10 +92,10 @@
 }
 
 .demo-content {
-    margin-left: 18%;
     box-sizing: border-box;
-    padding: 46px 20px;
-    width: 82%;
+    margin-left: 18%;
+    padding: 40px 20px;
+    width: auto;
     background-color: #f9f9f9;
     transition: all .3s;
 }
@@ -273,23 +274,20 @@
     display: none;
 }
 
-.demo-content .demo-foot {
-    padding-left: 15px;
-    height: 100px;
+.demo-foot {
+    padding: 15px 10px;
+    line-height: 2;
     background-color: #fff;
     border-radius: 6px;
-    font-size: 13px;
-}
-
-.demo-foot p {
-    display: flex;
-    height: 50px;
-    line-height: 50px;
+    font-size: 14px;
 }
 
 .demo-foot a {
-    margin: 0 5px;
     color: #4370d7;
+}
+
+.demo-foot i {
+    margin-right: 5px;
 }
 
 .demo-go-top {
@@ -319,6 +317,28 @@
     width: 120px;
     height: 120px;
     line-height: 120px;
+}
+
+@media all and (max-width: 1366px) and (min-width: 1201px) {
+    .demo-content-item-ls li {
+        width: 32%;
+    }
+}
+
+@media all and (max-width: 1200px) and (min-width: 1025px) {
+    .demo-content-item-ls li {
+        width: 31%;
+    }
+}
+
+@media all and (max-width: 1024px) and (min-width: 751px) {
+    header {
+        width: 20%;
+    }
+
+    .demo-content-item-ls li {
+        width: 48%;
+    }
 }
 
 @media all and (max-width: 750px) and (min-width: 319px) {
@@ -369,10 +389,9 @@
 
     .demo-nav-content li {
         box-sizing: border-box;
-        margin: .625rem auto;
         padding-left: 3.125rem;
-        height: 2.5rem;
-        line-height: 2.5rem;
+        height: 3.125rem;
+        line-height: 3.125rem;
         border-bottom: .0625rem solid #333;
     }
 
@@ -390,7 +409,7 @@
         box-sizing: border-box;
         padding: 1.875rem 1.25rem;
         width: 100%;
-        height: 100vh;
+        height: auto;
         background-color: #f9f9f9;
     }
 
@@ -483,13 +502,9 @@
         width: 150px;
     }
 
-    .demo-content .demo-foot {
-        margin-bottom: 3.75rem;
-        padding-left: .9375rem;
-        height: 3.125rem;
-        line-height: 3.125rem;
+    .demo-foot {
+        padding: .9375rem;
         background-color: #fff;
-        border-radius: .375rem;
         font-size: .8125rem;
     }
 
@@ -520,19 +535,13 @@
         width: 5.25rem;
         height: 5.25rem;
         line-height: 5.25rem;
-        z-index: 12;
+        z-index: 102;
     }
 
     .demo-go-github img {
         display: block;
         width: 100%;
         height: 100%;
-        line-height: 100%;
     }
-}
 
-.text-flow {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
