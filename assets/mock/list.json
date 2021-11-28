@@ -125,8 +125,19 @@
             "picUrl": "./assets/img/cover/xqblog.jpg",
             "type": "project",
             "tags": "vuejs,blog",
-            "create_time": "2021-08-29",
-            "update_time": "2021-08-29"
+            "create_time": "2021-11-19",
+            "update_time": "2021-11-19"
+        },
+        {
+            "cid": 1012,
+            "name": "【Vuejs】好奇视频",
+            "description": "【Vuejs】好奇视频是一个在线视频平台，提供简易视频播放，登录评论，分享搜索等功能。",
+            "href": "https://v.guanqi.xyz/",
+            "picUrl": "./assets/img/cover/xqvideo.jpg",
+            "type": "project",
+            "tags": "vuejs,video",
+            "create_time": "2021-11-28",
+            "update_time": "2021-11-28"
         },
         {
             "cid": 2001,
