@@ -88,7 +88,7 @@ function showSearchData(list) {
       element.href.indexOf("https") > -1
     ) {
       element.href =
-        "https://fe.guanqi.xyz/link/check/?target=" +
+        "https://felab.guanqi.xyz/link/check/?target=" +
         encodeURIComponent(element.href);
     } else {
       element.href = host + element.href;
@@ -129,7 +129,7 @@ function showData(list) {
       element.href.indexOf("https") > -1
     ) {
       element.href =
-        "https://fe.guanqi.xyz/link/check/?target=" +
+        "https://felab.guanqi.xyz/link/check/?target=" +
         encodeURIComponent(element.href);
     } else {
       element.href = host + element.href;

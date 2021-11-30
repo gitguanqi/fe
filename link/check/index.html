@@ -169,7 +169,7 @@
     </div>
     <script>
         if (location.search) {
-            let baseUrl = location.host.indexOf('localhost') > -1 ? 'http://localhost:4001/link/?url=' : 'https://fe.guanqi.xyz/link/?url='
+            let baseUrl = location.host.indexOf('localhost') > -1 ? 'http://localhost:4001/link/?url=' : 'https://felab.guanqi.xyz/link/?url='
             let safeLink = document.querySelector('.safe-link');
             let safeGo = document.querySelector('.safe-go');
             let targetUrl = decodeURIComponent(location.search.split('?')[1].split('=')[1]);
