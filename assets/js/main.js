@@ -31,7 +31,7 @@ function getData() {
   gjs.httpSimple("get", host + "/assets/mock/list.json", null, function (res) {
     if (res.code === 200) {
       let data = res.data;
-      document.title = data.name + "- 探索前端新技术";
+      document.title = data.name + "- 探索前端新技术，展望未来云前端";
       siteTitle.innerText = data.name;
       showData(data.list);
     } else {
