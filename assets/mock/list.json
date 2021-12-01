@@ -55,7 +55,7 @@
             "cid": 1005,
             "name": "【vuejs】好物图库",
             "description": "好物图库是基于vite2+vue3开发的一个各种分类的图片游览库。",
-            "href": "projects/gallery",
+            "href": "https://pics.guanqi.xyz/",
             "picUrl": "./assets/img/cover/pic.jpg",
             "type": "project",
             "tags": "vuejs,vite,图库",
