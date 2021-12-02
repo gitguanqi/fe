@@ -41,11 +41,11 @@
   <div id="box"></div>
   <input type="text" name="con" id="con" placeholder="请输入聊天内容">
   <button id="send">发送</button>
-  <script src="../../assets/js/gjs.min.js"></script>
+  <script src="https://static.guanqi.xyz/libs/gjs/1.0.2/js/gjs.min.js"></script>
   <script>
-    var box = $g.eid('box');
-    var con = $g.eid('con');
-    var send = $g.eid('send');
+    var box = $g.gId('box');
+    var con = $g.gId('con');
+    var send = $g.gId('send');
 
     $g.addEvent(send, 'click', sendCon, false);
 
