@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>webrtc练习</title>
+    <style>
+        body {
+            margin: 0 auto;
+            max-width: 750px;
+        }
+    </style>
 </head>
 <body>
     <h1>webrtc练习</h1>
@@ -21,10 +27,10 @@
     <button id="stopVideo">结束视频</button>
     <button id="playVideo">播放视频</button>
 	
-	<script src="js/record.js"></script>
+	<script src="https://static.guanqi.xyz/libs/xqrecord/0.0.2/record.min.js"></script>
 
     <script>
-
+        let xqr = new xqRecord;
         let audioStart = document.querySelector('#start');
         let audioStop = document.querySelector('#stop');
         let audioPlay = document.querySelector('#play');
@@ -33,11 +39,11 @@
         let playVideo = document.querySelector('#playVideo');
 
         audioStart.onclick = function () {  
-            start('audio');
+            xqr.start('audio');
         }
 
         audioStop.onclick = function () {  
-            stop('audio');
+            xqr.stop('audio');
         }
 
         audioPlay.onclick = function () {  
@@ -45,11 +51,11 @@
         }
 
         startVideo.onclick = function () {  
-            start('video');
+            xqr.start('video');
         }
 
         stopVideo.onclick = function () {  
-            stop('video');
+            xqr.stop('video');
         }
 
         playVideo.onclick = function () {  
