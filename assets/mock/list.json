@@ -822,6 +822,17 @@
             "update_time": "2019-10-18"
         },
         {
+            "cid": 4029,
+            "name": "xqMsg消息库",
+            "description": "xqMsg消息库是一个提供消息提示，弹出框，顶部气泡的消息库！",
+            "href": "cases/xqmsg/",
+            "picUrl": "./assets/img/cover/xqmsg.jpg",
+            "type": "js",
+            "tags": "js,canvas,钟表",
+            "create_time": "2019-10-18",
+            "update_time": "2019-10-18"
+        },
+        {
             "cid": 4030,
             "name": "canvas钟表1",
             "description": "canvas钟表1是一个js canvas钟表的练习案例。",
