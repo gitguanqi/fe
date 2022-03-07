@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Mark
  * @Date: 2019-10-18 19:49:27
- * @Last Modified by: Mr.Mark
- * @Last Modified time: 2020-03-25 11:25:51
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2022-03-07 11:26:18
  */
 let siteTitle = document.querySelector(".site-title");
 let counts = document.querySelectorAll(".count");
@@ -31,7 +31,7 @@ function getData() {
   gjs.httpSimple("get", host + "/assets/mock/list.json", null, function (res) {
     if (res.code === 200) {
       let data = res.data;
-      document.title = data.name + "- 探索前端新技术，展望未来云前端";
+      document.title = data.name + "- 探索新技术，展望未来云";
       siteTitle.innerText = data.name;
       showData(data.list);
     } else {
