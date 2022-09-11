@@ -2,7 +2,7 @@
  * @Author: Mr.Mark
  * @Date: 2019-10-18 19:49:27
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2022-09-05 12:58:53
+ * @Last Modified time: 2022-09-11 16:09:28
  */
 let siteTitle = document.querySelector(".site-title");
 let counts = document.querySelectorAll(".count");
@@ -166,7 +166,6 @@ function lazyLoad() {
     document.documentElement.clientHeight || document.body.clientHeight;
   let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   for (var i = 0; i < lazyImgs.length; i++) {
-    console.log(lazyImgs[i].offsetTop, clientHeight+scrollTop);
     if (lazyImgs[i].offsetTop < clientHeight + scrollTop) {
       let secImgs = lazyImgs[i];
       if (secImgs.getAttribute("src") === "./assets/img/holder.png") {
