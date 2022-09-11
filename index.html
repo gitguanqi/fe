@@ -5,21 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>前端实验室 - 探索新技术，展望未来云</title>
-    <link
-      href="https://static.guanqi.xyz/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://static.guanqi.xyz/libs/opensans/0.0.1/css/opensans.min.css"
-    />
-    <script src="./assets/js/matomo.js"></script>
     <link rel="stylesheet" href="./assets/css/reset.min.css" />
     <link rel="stylesheet" href="./assets/css/main.min.css" />
-    <script src="https://static.guanqi.xyz/libs/xqdevice/0.0.1/js/device.min.js"></script>
-    <script src="https://static.guanqi.xyz/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://static.guanqi.xyz/libs/respond/1.4.2/js/respond.min.js"></script>
-    <script src="https://static.guanqi.xyz/libs/xqmourn/0.0.1/js/xqmourn.min.js"></script>
   </head>
 
   <body>
@@ -115,7 +102,7 @@
         </section>
         <footer class="demo-foot">
           <p>
-            &copy; 2017- 2021
+            &copy; 2017- <span id="year">2021</span>
             <a href="./"><i class="fa fa-flask"></i>前端实验室</a> All Rights
             Reserved.
           </p>
@@ -126,7 +113,17 @@
         <i class="fa fa-chevron-up"></i>
       </aside>
     </div>
-    <script src="https://static.guanqi.xyz/libs/gjs/1.0.3/js/gjs.min.js"></script>
-    <script src="./assets/js/main.min.js"></script>
+    <script src="./assets/js/libs.min.js"></script>
+    <script src="./assets/js/matomo.js"></script>
+    <script>
+    window.onload = function () {  
+        let head = document.getElementsByTagName('head')[0],
+            mainJs = document.createElement('script');
+        mainJs.src = './assets/js/main.js';
+        head.appendChild(mainJs);
+        let year = document.getElementById('year');
+        year.innerText = new Date().getFullYear();
+    }
+    </script>
   </body>
 </html>

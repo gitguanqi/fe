@@ -2,7 +2,7 @@
  * @Author: Mr.Mark
  * @Date: 2019-10-18 19:49:27
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2022-03-07 11:26:18
+ * @Last Modified time: 2022-09-05 12:58:53
  */
 let siteTitle = document.querySelector(".site-title");
 let counts = document.querySelectorAll(".count");
@@ -113,7 +113,6 @@ function showSearchData(list) {
     contentItem.innerHTML += str;
   }
   searchCount.innerText = list.length;
-  lazyLoad();
 }
 
 // 显示数据
@@ -158,24 +157,22 @@ function showData(list) {
     counts[i].innerText = element.childNodes.length;
   }
   count.innerText = list.length;
-  lazyLoad();
 }
 
 // 图片懒加载
 function lazyLoad() {
-  let n = 0;
   let lazyImgs = document.querySelectorAll(".lazyimg");
   let clientHeight =
     document.documentElement.clientHeight || document.body.clientHeight;
   let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  for (var i = n; i < lazyImgs.length; i++) {
+  for (var i = 0; i < lazyImgs.length; i++) {
+    console.log(lazyImgs[i].offsetTop, clientHeight+scrollTop);
     if (lazyImgs[i].offsetTop < clientHeight + scrollTop) {
       let secImgs = lazyImgs[i];
       if (secImgs.getAttribute("src") === "./assets/img/holder.png") {
         secImgs.src = secImgs.getAttribute("data-src");
       }
     }
-    n = i + 1;
   }
 }
 
