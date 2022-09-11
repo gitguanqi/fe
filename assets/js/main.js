@@ -2,7 +2,7 @@
  * @Author: Mr.Mark
  * @Date: 2019-10-18 19:49:27
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2022-09-11 16:09:28
+ * @Last Modified time: 2022-09-11 16:40:23
  */
 let siteTitle = document.querySelector(".site-title");
 let counts = document.querySelectorAll(".count");
@@ -20,6 +20,10 @@ let goTopBtn = document.querySelector(".demo-go-top");
 let showNav = document.querySelector(".demo-show-nav");
 let demoNav = document.querySelector(".demo-nav");
 let navExit = document.querySelector(".demo-nav-exit");
+
+// 版权日期
+let year = document.getElementById('year');
+year.innerText = new Date().getFullYear();
 
 // 搜索事件
 search.addEventListener("input", searchDemo, false);
