@@ -1,8 +1,8 @@
 /*
  * @Author: Mr.Mark  
  * @Date: 2019-10-18 19:44:09 
- * @Last Modified by: Mr.Mark
- * @Last Modified time: 2020-03-25 11:54:34
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2022-09-15 17:36:57
  */
 .clearFix {
     zoom: 1;
@@ -209,7 +209,7 @@ header {
 
 .demo-content-item-ls li a .demo-item-img img {
     width: auto;
-    max-height: 150px;
+    height: 100%;
 }
 
 .demo-content-item-ls li a .project-title {
