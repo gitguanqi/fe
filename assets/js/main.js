@@ -2,7 +2,7 @@
  * @Author: Mr.Mark
  * @Date: 2019-10-18 19:49:27
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2022-09-11 16:40:23
+ * @Last Modified time: 2022-09-15 17:26:02
  */
 let siteTitle = document.querySelector(".site-title");
 let counts = document.querySelectorAll(".count");
@@ -27,6 +27,10 @@ year.innerText = new Date().getFullYear();
 
 // 搜索事件
 search.addEventListener("input", searchDemo, false);
+
+// 图片懒加载
+let lazyImgs = null;
+let clientHei = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
 // 获取数据
 getData();
@@ -161,29 +165,39 @@ function showData(list) {
     counts[i].innerText = element.childNodes.length;
   }
   count.innerText = list.length;
+
+  lazyImgs = document.querySelectorAll(".lazyimg");
+  if (lazyImgs && lazyImgs.length) {
+    lazyLoad();
+  }
+  
 }
 
 // 图片懒加载
+function isVisible (element) {  
+  let rect = element.getBoundingClientRect();
+  return rect.top > 0 && rect.top < clientHei;
+}
+
+
 function lazyLoad() {
-  let lazyImgs = document.querySelectorAll(".lazyimg");
-  let clientHeight =
-    document.documentElement.clientHeight || document.body.clientHeight;
-  let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  for (var i = 0; i < lazyImgs.length; i++) {
-    if (lazyImgs[i].offsetTop < clientHeight + scrollTop) {
-      let secImgs = lazyImgs[i];
-      if (secImgs.getAttribute("src") === "./assets/img/holder.png") {
-        secImgs.src = secImgs.getAttribute("data-src");
+    for (let i = 0; i < lazyImgs.length; i++) {
+      let img = lazyImgs[i];
+      let res = isVisible(img);
+      if (res) {
+        img.setAttribute('src', img.getAttribute('data-src'));
       }
     }
-  }
 }
 
 content.addEventListener(
   "scroll",
   function () {
     // 懒加载
-    lazyLoad();
+    lazyImgs = document.querySelectorAll(".lazyimg");
+    if (lazyImgs && lazyImgs.length) {
+      lazyLoad();
+    }
     // 到顶部
     let scrollTop = content.scrollTop;
     if (scrollTop > 280) {
