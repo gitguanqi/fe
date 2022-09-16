@@ -899,6 +899,17 @@
             "update_time": "2021-06-15"
         },
         {
+            "cid": 4036,
+            "name": "js之分页按钮滚动加载页面内容",
+            "description": "js之分页按钮滚动加载页面内容的案例。",
+            "href": "cases/loading/",
+            "picUrl": "./assets/img/cover/loading.jpg",
+            "type": "js",
+            "tags": "js,loading",
+            "create_time": "2022-09-16",
+            "update_time": "2022-09-16"
+        },
+        {
             "cid": 5001,
             "name": "我的博客",
             "description": "我的博客是一个个人技术博客的站点。",
