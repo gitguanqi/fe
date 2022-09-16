@@ -2,7 +2,7 @@
  * @Author: Mr.Mark
  * @Date: 2019-10-18 19:49:27
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2022-09-15 17:26:02
+ * @Last Modified time: 2022-09-16 10:05:06
  */
 let siteTitle = document.querySelector(".site-title");
 let counts = document.querySelectorAll(".count");
@@ -62,6 +62,7 @@ function searchDemo(e) {
       contents[i].style.display = "none";
     }
     searchContent.style.display = "block";
+    keywords = keywords.toLowerCase();
     getSearch(keywords);
   }
 }
