@@ -910,6 +910,17 @@
             "update_time": "2022-09-16"
         },
         {
+            "cid": 4037,
+            "name": "歌词解析",
+            "description": "歌词解析方法的小案例。",
+            "href": "cases/lyric/",
+            "picUrl": "./assets/img/cover/lyric.jpg",
+            "type": "js",
+            "tags": "js,lyric",
+            "create_time": "2022-09-19",
+            "update_time": "2022-09-19"
+        },
+        {
             "cid": 5001,
             "name": "我的博客",
             "description": "我的博客是一个个人技术博客的站点。",
