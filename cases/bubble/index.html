@@ -67,11 +67,10 @@
         <div class="img-big-banner" style="background-image: url('./img/haibian.webp')" alt="">
         <div class="img-bubble"></div>
     </div>
-    <script src="./js/jquery.min.js"></script>
+    <script src="./js/gjs.min.js"></script>
     <script src="./js/bubble.js"></script>
     <script>
-        let imgBubble = $('.img-bubble')[0];
-        let imgBubbleHeight = $('.img-bubble').height();
+        let imgBubble = $g('.img-bubble')[0];
         let imgArr = [];
         for (let i = 1; i <= 20; i++) {
             let imgIndex = i >= 10 ? i : '0'+ i;
