@@ -921,6 +921,17 @@
             "update_time": "2022-09-19"
         },
         {
+            "cid": 4038,
+            "name": "小奇音乐播放器",
+            "description": "小奇音乐播放器插件案例。",
+            "href": "cases/xqmusic/docs/",
+            "picUrl": "./assets/img/cover/xqmusicplayer.jpg",
+            "type": "js",
+            "tags": "js,musicplayer",
+            "create_time": "2022-09-24",
+            "update_time": "2022-09-24"
+        },
+        {
             "cid": 5001,
             "name": "我的博客",
             "description": "我的博客是一个个人技术博客的站点。",
