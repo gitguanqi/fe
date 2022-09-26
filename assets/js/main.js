@@ -2,7 +2,7 @@
  * @Author: Mr.Mark
  * @Date: 2019-10-18 19:49:27
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2022-09-16 10:05:06
+ * @Last Modified time: 2022-09-26 08:57:15
  */
 let siteTitle = document.querySelector(".site-title");
 let counts = document.querySelectorAll(".count");
@@ -97,7 +97,7 @@ function showSearchData(list) {
       element.href.indexOf("https") > -1
     ) {
       element.href =
-        "https://felab.guanqi.xyz/link/check/?target=" +
+        "./link/check/?target=" +
         encodeURIComponent(element.href);
     } else {
       element.href = host + element.href;
@@ -137,7 +137,7 @@ function showData(list) {
       element.href.indexOf("https") > -1
     ) {
       element.href =
-        "https://felab.guanqi.xyz/link/check/?target=" +
+        "./link/check/?target=" +
         encodeURIComponent(element.href);
     } else {
       element.href = host + element.href;
