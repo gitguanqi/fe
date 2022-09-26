@@ -169,7 +169,7 @@
     </div>
     <script>
         if (location.search) {
-            let baseUrl = '/link/?url=';
+            let baseUrl = './link/?url=';
             let safeLink = document.querySelector('.safe-link');
             let safeGo = document.querySelector('.safe-go');
             let targetUrl = decodeURIComponent(location.search.split('?')[1].split('=')[1]);
@@ -182,7 +182,7 @@
                 location.href = url;
             }
         } else {
-            location.href = '/';
+            location.href = './';
         }
     </script>
 </body>
