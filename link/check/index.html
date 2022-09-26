@@ -169,7 +169,7 @@
     </div>
     <script>
         if (location.search) {
-            let baseUrl = './link/?url=';
+            let baseUrl = '../?url=';
             let safeLink = document.querySelector('.safe-link');
             let safeGo = document.querySelector('.safe-go');
             let targetUrl = decodeURIComponent(location.search.split('?')[1].split('=')[1]);
@@ -177,12 +177,12 @@
                 safeLink.innerText = targetUrl;
             }
             safeGo.addEventListener('click', goLink, false);
-            function goLink () {  
-                let url = `${baseUrl}${encodeURIComponent(targetUrl)}`;
+            function goLink () {
+                let url = baseUrl + encodeURIComponent(targetUrl);
                 location.href = url;
             }
         } else {
-            location.href = './';
+            location.href = '../../';
         }
     </script>
 </body>
