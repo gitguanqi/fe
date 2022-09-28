@@ -15,40 +15,33 @@
     <div id="music"></div>
     <script>
 
-        let songs = [
-            {
-                id: 1,
-                name: '麻雀',
-                author: '李荣浩',
-                pic: './data/lrh-mq.jpg',
-                lyric_url: './data/lrh-mq.lrc',
-                url: './data/lrh-mq.mp3',
-            },
-            {
-                id: 2,
-                name: '年少有为',
-                author: '李荣浩',
-                pic: './data/lrh-nsyw.jpg',
-                lyric_url: './data/lrh-nsyw.lrc',
-                url: './data/lrh-nsyw.mp3',
-            },
-            {
-                id: 3,
-                name: '爸爸妈妈',
-                author: '李荣浩',
-                pic: './data/lrh-bbmm.jpg',
-                lyric_url: './data/lrh-bbmm.lrc',
-                url: './data/lrh-bbmm.mp3',
-            }
-        ]
+        // 插件参数
+        let options = {
+            el: '#music',
+            list: [],
+            mode: 'slide', // move/slide
+        },
+        dataUrl = '../../../assets/mock/music.json';
 
         window.onload = function () {  
-            new XqMusic({
-                el: '#music',
-                list: songs,
-                mode: 'slide', // move/slide
-            });
+            getList();
         }
+        
+        
+        // 获取歌曲列表
+        async function getList () {  
+            let data = await axios.get(dataUrl);
+            if (data.status === 200) {
+                options.list = [...data.data];
+                init(options);
+            }
+        }
+
+        // 初始化参数
+        function init (options) {  
+            new XqMusic(options);
+        }
+
 
     </script>
 </body>
