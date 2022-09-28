@@ -18,7 +18,7 @@
 
 本项目采用[W3C](https://w3.org)WEB标准原生语言搭建而成，主题采用自主设计。
 
-目前暂未发现程序安全问题，如有问题，请提[建议](https://github.com/gitguanqi/demo/issues/new)。
+目前暂未发现程序安全问题，如有问题，请提[建议](https://github.com/gitguanqi/felab/issues/new)。
 
 ## 背景
 
@@ -27,8 +27,8 @@
 ## 安装
 
 ```sh
-git clone https://github.com/gitguanqi/demo.git demo
-cd demo
+git clone https://github.com/gitguanqi/felab.git felab
+cd felab
 npm i live-server -g
 live-server --port=4001
 ```
@@ -49,10 +49,10 @@ live-server --port=4001
   "cid": 1001,
   "name": "XXX",
   "description": "XXX",
-  "href": "projects / XXX /",
+  "href": "projects/XXX/",
   "picUrl": "./assets/images/cover/XXX.jpg",
   "type": "project",
-  "tags": "XXX, XXX",
+  "tags": "XXX,XXX",
   "create_time": "2020-03-04",
   "update_time": "2020-03-04"
 }

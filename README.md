@@ -18,7 +18,7 @@
 
 This project is built using [W3C](https://w3.org) WEB standard native language, and the theme is designed independently.
 
-No program security issues have been found at this time. If you have any questions, please mention [Suggestions](https://github.com/gitguanqi/demo/issues/new).
+No program security issues have been found at this time. If you have any questions, please mention [Suggestions](https://github.com/gitguanqi/felab/issues/new).
 
 ## Background
 
@@ -27,8 +27,8 @@ This warehouse records a summary of front-end knowledge cases that I have writte
 ## Installation
 
 ```sh
-git clone https://github.com/gitguanqi/demo.git demo
-cd demo
+git clone https://github.com/gitguanqi/felab.git felab
+cd felab
 npm i live-server -g
 live-server --port=4001
 ```
@@ -37,7 +37,7 @@ Open `http://localhost:4001` to see it.
 
 ## Usage
 
-Add project records in `assets / mock / list.json`.
+Add project records in `assets/mock/list.json`.
 
 Large projects can be added in the `projects` folder and small cases in the `cases` folder.
 
@@ -49,10 +49,10 @@ Large projects can be added in the `projects` folder and small cases in the `cas
   "cid": 1001,
   "name": "XXX",
   "description": "XXX",
-  "href": "projects / XXX /",
+  "href": "projects/XXX/",
   "picUrl": "./assets/images/cover/XXX.jpg",
   "type": "project",
-  "tags": "XXX, XXX",
+  "tags": "XXX,XXX",
   "create_time": "2020-03-04",
   "update_time": "2020-03-04"
 }
