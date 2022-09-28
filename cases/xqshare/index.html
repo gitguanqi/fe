@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小奇分享插件案例</title>
+    <link rel="stylesheet" href="https://static.guanqi.xyz/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://static.guanqi.xyz/libs/xqmsg/0.0.1/css/xqmsg.min.css">
+    <link rel="stylesheet" href="https://static.guanqi.xyz/libs/xqreset/0.0.1/css/reset.min.css">
+    <link rel="stylesheet" href="./css/xqshare.css">
+    <script src="https://static.guanqi.xyz/libs/xqmsg/0.0.1/js/xqmsg.min.js"></script>
+    <script src="https://static.guanqi.xyz/libs/xqshare/0.0.1/js/xqshare.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <button id="openBtn">分享到<i class="fa fa-share-square"></i></button>
+    </div>
+    <div class="editor-share-box">
+        <div class="editor-share-inner">
+            <div class="editor-share-title"><span>分享预览页面</span><i class="fa fa-times"></i></div>
+            <div class="editor-share-content">
+                <ul class="editor-share-ls">
+                    <li data-type="qq"><img data-type="qq" src="https://static.guanqi.xyz/libs/xqshare/0.0.1/img/share_qq.png" alt="qq"
+                            title="qq"><span data-type="qq">qq</span></li>
+                    <li data-type="qzone"><img data-type="qzone" src="https://static.guanqi.xyz/libs/xqshare/0.0.1/img/share_qzone.png" alt="qq空间"
+                            title="qq空间"><span data-type="qzone">qq空间</span></li>
+                    <li data-type="weibo"><img data-type="weibo" src="https://static.guanqi.xyz/libs/xqshare/0.0.1/img/share_weibo.png" alt="微博"
+                            title="微博"><span data-type="weibo">微博</span></li>
+                    <li data-type="douban"><img data-type="douban" src="https://static.guanqi.xyz/libs/xqshare/0.0.1/img/share_douban.png" alt="豆瓣"
+                            title="豆瓣"><span data-type="douban">豆瓣</span></li>
+                    <li data-type="tieba"><img data-type="tieba" src="https://static.guanqi.xyz/libs/xqshare/0.0.1/img/share_tieba.png" alt="贴吧"
+                            title="贴吧"><span data-type="tieba">贴吧</span></li>
+                </ul>
+                <div class="editor-share-urls">
+                    <p><span>预览地址</span><input id="previewUrl" type="text" disabled="true"><small id="copyUrl">复制</small></p>
+                    <p><span>嵌入代码</span><input id="iframeUrl" type="text" disabled="true"><input type="hidden" id="iframe-url"
+                            value=""><small  id="copyIframe">复制</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let shareBox = document.querySelector('.editor-share-box'),
+        shareList = document.querySelectorAll('.editor-share-ls li'),
+        previewUrl = document.querySelector('#previewUrl'),
+        iframeUrl = document.querySelector('#iframeUrl'),
+        copyUrl = document.querySelector('#copyUrl'),
+        copyIframe = document.querySelector('#copyIframe'),
+        openBtn = document.querySelector('#openBtn'),
+        closeBtn = document.querySelector('.fa-times');
+        shareUrl = location.href,
+        iframeShareUrl = `<iframe src='${shareUrl}' frameborder=0></iframe>`;
+
+        // 列表点击
+        for (const item of shareList) {
+            item.addEventListener('click', startShare, false);
+        }
+        function startShare () {
+            let e = window.event || event;
+            let type = e.target.dataset.type;
+            xqShare(type, shareUrl, document.title);
+        }
+
+        // 地址
+        previewUrl.value = shareUrl;
+        iframeUrl.value = iframeShareUrl;
+
+        // 打开分享
+        openBtn.onclick = function () {
+            shareBox.classList.add('active');
+        }
+
+        // 关闭分享
+        closeBtn.onclick = function () {
+            shareBox.classList.remove('active');
+        }
+
+        // 复制文本
+        copyUrl.onclick = function () {  
+            copyText('previewUrl');
+        }
+
+        copyIframe.onclick = function () {  
+            copyText('iframeUrl');
+        }
+
+        function copyText(id) {
+            let txt = document.getElementById(id).value;
+            if (!txt) return;
+            let oIpt = document.createElement('input');
+            oIpt.value = txt;
+            document.body.appendChild(oIpt);
+            oIpt.select();
+            document.execCommand("Copy");
+            document.body.removeChild(oIpt);
+            xqMsg.pop('复制成功！');
+            return true;
+        }
+
+    </script>
+
+</body>
+
+</html>

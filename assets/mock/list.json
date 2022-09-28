@@ -932,6 +932,17 @@
             "update_time": "2022-09-24"
         },
         {
+            "cid": 4039,
+            "name": "小奇分享插件",
+            "description": "小奇分享插件案例。",
+            "href": "cases/xqshare/",
+            "picUrl": "./assets/img/cover/share.jpg",
+            "type": "js",
+            "tags": "js,sharejs",
+            "create_time": "2022-09-28",
+            "update_time": "2022-09-28"
+        },
+        {
             "cid": 5001,
             "name": "我的博客",
             "description": "我的博客是一个个人技术博客的站点。",
