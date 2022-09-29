@@ -5,64 +5,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>正在跳转中...</title>
-    <script src="../assets/js/matomo.js"></script>
-    <!-- End Matomo Code -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="keyword" content="demo">
     <meta name="description" content="这是一个展示日常demo的网页！">
     <meta name="author" content="Mr.Mark ">
-    <link rel="stylesheet" href="https://static.guanqi.xyz/cdn/opensans/0.0.1/css/opensans.min.css">
-    <script src="https://static.guanqi.xyz/libs/xqdevice/0.0.1/js/device.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/link.min.css">
+    <script src="../assets/js/device.min.js"></script>
     <!-- [if lt IE 9]>
-	<script src="../assets/js/html5shiv.min.js"></script> 
-	<![endif] -->
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        .loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100vh;
-        }
-
-        .loading-inner {
-            display: flex;
-            justify-content: center;
-            align-content: center;
-        }
-
-        .loading-inner > div {
-            margin: 3rem 0.2rem;
-            width: 1.5rem;
-            height: 1.5rem;
-            background-color: #2b6ac8;
-            border-radius: 50%;
-            animation: bouncing-loader 0.6s infinite alternate;
-        }
-
-        .loading-inner>div:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .loading-inner>div:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes bouncing-loader {
-            to {
-                opacity: 0.1;
-                transform: translate3d(0, -1rem, 0);
-            }
-        }
-    </style>
+    <script src="https://static.guanqi.xyz/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://static.guanqi.xyz/libs/respond/1.4.2/js/respond.min.js"></script>
+    <![endif] -->
+    <script src="../assets/js/matomo.js"></script>
 </head>
 
 <body>
+    <noscript>
+        <p>请启用javascript!</p>
+        <!-- Matomo Image Tracker-->
+        <img referrerpolicy="no-referrer-when-downgrade" src="https://am.guanqi.xyz/matomo.php?idsite=3&amp;rec=1"
+            style="border:0" alt="" />
+        <!-- End Matomo -->
+    </noscript>
     <div class="loading">
         <div class="loading-inner">
             <div></div>
@@ -70,21 +33,8 @@
             <div></div>
         </div>
     </div>
-    <script>
-        if (location.search) {
-            let url = decodeURIComponent(location.search.split('?')[1].split('=')[1]);
-            if (url && url.indexOf('http') > -1) {
-                setTimeout(function(){
-                    location = url;
-                }, 886);
-            } else {
-                alert('暂无链接！');
-                window.history.back();
-            }
-        } else {
-            location.href = '../';
-        }
-    </script>
+    <script src="https://static.guanqi.xyz/libs/xqmourn/0.0.1/js/xqmourn.min.js"></script>
+    <script src="../assets/js/link.min.js"></script>
 </body>
 
 </html>

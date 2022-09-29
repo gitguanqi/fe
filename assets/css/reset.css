@@ -87,7 +87,7 @@ a {
 
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
   background-color: rgba(0, 0, 0, 1);
 }
 
@@ -99,7 +99,7 @@ a {
 
 ::-webkit-scrollbar-thumb {
   background-color: #2da7fd;
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 /* 滑块颜色 */
@@ -112,7 +112,7 @@ a {
 
 ::-webkit-scrollbar-corner {
   background-color: #2da7fd;
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 /* 横向滚动条和纵向滚动条相交处尖角的颜色 */

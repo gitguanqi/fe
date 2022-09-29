@@ -2,7 +2,7 @@
  * @Author: Mr.Mark  
  * @Date: 2019-10-18 19:44:09 
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2022-09-15 17:36:57
+ * @Last Modified time: 2022-09-29 11:13:43
  */
 .clearFix {
     zoom: 1;
@@ -91,7 +91,7 @@ header {
     color: #2da7fd;
 }
 
-.demo-nav-content li a .fa {
+.demo-nav-content li a .felab {
     margin-right: 10px;
     font-size: 12px;
 }
@@ -249,7 +249,7 @@ header {
     color: #555;
 }
 
-.demo-content-item-ls li a .project-tags .fa {
+.demo-content-item-ls li a .project-tags .felab {
     margin-right: 5px;
 }
 
@@ -317,6 +317,10 @@ header {
 
 .demo-go-top:hover {
     cursor: pointer;
+}
+
+.demo-go-top i {
+    font-size: 28px;
 }
 
 .demo-go-github {
@@ -389,7 +393,7 @@ header {
         text-align: center;
     }
 
-    .demo-nav-title .demo-nav-exit .fa {
+    .demo-nav-title .demo-nav-exit .felab {
         color: #fff;
         font-style: 1rem;
     }
@@ -413,7 +417,7 @@ header {
         font-size: 1rem;
     }
 
-    .demo-nav-content li a .fa {
+    .demo-nav-content li a .felab {
         margin-right: .625rem;
         font-size: .75rem;
     }

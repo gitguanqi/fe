@@ -2,7 +2,7 @@
  * @Author: Mr.Mark
  * @Date: 2019-10-18 19:49:27
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2022-09-26 08:57:15
+ * @Last Modified time: 2022-09-29 11:11:48
  */
 let siteTitle = document.querySelector(".site-title");
 let counts = document.querySelectorAll(".count");
@@ -116,7 +116,7 @@ function showSearchData(list) {
       element.name +
       '</span><span class="project-des">' +
       element.description +
-      '</span><span class="project-tags"><i class="fa fa-tags"></i>' +
+      '</span><span class="project-tags"><i class="felab felab-tags"></i>' +
       tags +
       "</span></div></a></li>";
     contentItem.innerHTML += str;
@@ -156,7 +156,7 @@ function showData(list) {
       element.name +
       '</span><span class="project-des">' +
       element.description +
-      '</span><span class="project-tags"><i class="fa fa-tags"></i>' +
+      '</span><span class="project-tags"><i class="felab felab-tags"></i>' +
       tags +
       "</span></div></a></li>";
     contentItem[cIndex].innerHTML += str;
