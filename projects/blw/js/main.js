@@ -56,3 +56,13 @@ if (totop) {
 		},2)
 	}
 }
+
+window.onresize = function () {
+	let clientWin = document.documentElement.clientWidth ||
+	document.body.clientWidth || screen.width;
+	if (clientWin <= 768) {
+		window.location.href = './index.html';
+	} else {
+		window.location.href = './default.html';
+	}
+}

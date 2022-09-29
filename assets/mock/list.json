@@ -22,7 +22,7 @@
             "cid": 1002,
             "name": "【原生开发】移动端B站",
             "description": "移动端B站是一个包含B站移动端首页，二级目录页，登录注册页，导航分类页，排行榜页的一个案例站点。",
-            "href": "projects/blw/",
+            "href": "projects/blw/default.html",
             "picUrl": "./assets/img/cover/blw.jpg",
             "type": "project",
             "tags": "wap,B站",
