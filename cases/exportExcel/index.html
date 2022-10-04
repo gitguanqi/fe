@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>导出到excel</title>
     <script src="../../assets/js/matomo.js"></script>
-  <script src="https://static.guanqi.xyz/libs/gjs/1.0.2/js/gjs.min.js"></script>
+  <script src="https://cdn.guanqi.xyz/libs/xqgjs/1.0.5/xqgjs.min.js"></script>
 </head>
 
 <body>
@@ -50,12 +50,13 @@
     </table>
   </div>
   <script>
-    let exportExcelBtn = document.querySelector('#exportExcel');
-    $g.addEvent(exportExcelBtn, 'click', exportExcelSet, false);
+      let exportExcelBtn = $g('#exportExcel')[0];
+      $g.addEvent(exportExcelBtn, 'click', exportExcelSet, false);
 
-    function exportExcelSet() {
-      $g.exportExcel('myDiv', 'example' + Date.parse(new Date()) + '.xls');
-    }
+      function exportExcelSet() {
+          $g.exportExcel('myDiv', 'example' + Date.parse(new Date()) + '.xls');
+      }
+
   </script>
 </body>
 
