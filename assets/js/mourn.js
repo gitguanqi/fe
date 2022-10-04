@@ -8,7 +8,7 @@
  */
 (function xqMourn () {
     let xqmourn = document.getElementById('xqmourn');
-    let dates = xqmourn.dataset.date;
+    let dates = xqmourn.dataset ? xqmourn.dataset.date : '';
     let now = new Date();
     let mouth = now.getMonth()+1;
     let day = now.getDate();
