@@ -2,7 +2,7 @@
  * @Author: Mr.Mark
  * @Date: 2019-10-18 19:49:27
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2022-09-29 11:11:48
+ * @Last Modified time: 2022-10-06 13:41:04
  */
 let siteTitle = document.querySelector(".site-title");
 let counts = document.querySelectorAll(".count");
@@ -27,10 +27,6 @@ year.innerText = new Date().getFullYear();
 
 // 搜索事件
 search.addEventListener("input", searchDemo, false);
-
-// 图片懒加载
-let lazyImgs = null;
-let clientHei = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
 // 获取数据
 getData();
@@ -122,6 +118,9 @@ function showSearchData(list) {
     contentItem.innerHTML += str;
   }
   searchCount.innerText = list.length;
+  if (list && list.length) {
+    lazyLoad();
+  }
 }
 
 // 显示数据
@@ -166,22 +165,21 @@ function showData(list) {
     counts[i].innerText = element.childNodes.length;
   }
   count.innerText = list.length;
-
-  lazyImgs = document.querySelectorAll(".lazyimg");
-  if (lazyImgs && lazyImgs.length) {
+  if (list && list.length) {
     lazyLoad();
   }
-  
 }
 
 // 图片懒加载
-function isVisible (element) {  
+function isVisible (element) {
+  let clientHei = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
   let rect = element.getBoundingClientRect();
   return rect.top > 0 && rect.top < clientHei;
 }
 
 
 function lazyLoad() {
+  let lazyImgs = document.querySelectorAll(".lazyimg");
     for (let i = 0; i < lazyImgs.length; i++) {
       let img = lazyImgs[i];
       let res = isVisible(img);
