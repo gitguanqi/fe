@@ -114,6 +114,11 @@ header {
     align-items: center;
 }
 
+.demo-content-all h3 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
 .demo-content .demo-content-search {
     margin-left: 10px;
     margin-right: 100px;
