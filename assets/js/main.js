@@ -2,7 +2,7 @@
  * @Author: Mr.Mark
  * @Date: 2019-10-18 19:49:27
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2022-10-06 13:41:04
+ * @Last Modified time: 2022-10-16 14:56:53
  */
 let siteTitle = document.querySelector(".site-title");
 let counts = document.querySelectorAll(".count");
@@ -32,7 +32,7 @@ search.addEventListener("input", searchDemo, false);
 getData();
 
 function getData() {
-  gjs.httpSimple("get", host + "/assets/mock/list.json", null, function (res) {
+  gjs.httpSimple("get", host + "/assets/mock/list.min.json", null, function (res) {
     if (res.code === 200) {
       let data = res.data;
       document.title = data.name + "- 探索新技术，展望未来云";
@@ -65,7 +65,7 @@ function searchDemo(e) {
 
 // 获取搜索内容
 function getSearch(keywords) {
-  gjs.httpSimple("get", host + "/assets/mock/list.json", null, function (res) {
+  gjs.httpSimple("get", host + "/assets/mock/list.min.json", null, function (res) {
     let searchArr = [];
     let list = res.data.list;
     for (let i = 0; i < list.length; i++) {

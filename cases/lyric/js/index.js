@@ -11,7 +11,7 @@ getLyric();
 
 // 获取歌词
 async function getLyric () {  
-    let data = await axios.get('data/lrh-mq.lrc');
+    let data = await axios.get('../../../assets/data/music/lrh-mq.lrc');
     let lrcs = parseLyric(data.data);
     localStorage.setItem('lyrcis', JSON.stringify(lrcs));
     showLyric(lrcs);

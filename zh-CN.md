@@ -30,7 +30,7 @@
 git clone https://github.com/gitguanqi/felab.git felab
 cd felab
 npm i live-server -g
-live-server --port=4001
+live-server --port=4001 --host=localhost
 ```
 
 打开`http://localhost:4001`便可查看。

@@ -30,7 +30,7 @@ This warehouse records a summary of front-end knowledge cases that I have writte
 git clone https://github.com/gitguanqi/felab.git felab
 cd felab
 npm i live-server -g
-live-server --port=4001
+live-server --port=4001 --host=localhost
 ```
 
 Open `http://localhost:4001` to see it.

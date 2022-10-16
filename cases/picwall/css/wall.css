@@ -6,17 +6,16 @@ content: 照片墙。
 body {
   background: #fff url('../image/bg1.jpg');
 }
-.piclist li {
-  display: inline;
+.piclist {
+  padding-top: 50px;
 }
-.piclist li a {
+.piclist li {
   display: inline-block;
-  margin: 0 0 57px 100px;
+  margin: 0 0 57px 57px;
   padding: 10px 10px 15px;
   width: auto;
   background-color: #fff;
   text-align: center;
-  text-decoration: none;
   box-shadow: 0 3px 6px rgba(0,0,0,.25);
   -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
   -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
@@ -26,6 +25,9 @@ body {
   transition: all 1s;
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
+}
+.piclist li a {
+  text-decoration: none;
 }
 .piclist li a:after {
   color: #c31636;
@@ -66,13 +68,13 @@ body {
   left: -5px;
   top: 3px;
 }
-.piclist li a:hover {
+.piclist li:hover {
   position: relative;
   box-shadow: 0 3px 6px rgba(0,0,0,.5);
   -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
   -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
-  transform: scale(1.8);
-  -webkit-transform: scale(1.8);
-  -moz-transform: scale(1.8);
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
   z-index: 5;
 }
