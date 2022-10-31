@@ -2,7 +2,7 @@
  * @Autor: MarkGuan
  * @Date: 2022-09-29 10:41:01
  * @LastEditors: MarkGuan
- * @LastEditTime: 2022-10-31 10:56:37
+ * @LastEditTime: 2022-10-31 14:09:31
  * @Description: This is a mourn js!
  */
 (function xqMourn () {
@@ -17,7 +17,7 @@
         mourns = dates.split(',');
     }
 
-    if (mourns.includes(date)) {
+    if (mourns.indexOf(date) > -1) {
         document.documentElement.style = 'filter: gray; filter: grayscale(1)';
     } else {
         document.documentElement.style = '';

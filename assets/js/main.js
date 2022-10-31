@@ -2,7 +2,7 @@
  * @Autor: MarkGuan
  * @Date: 2021-12-22 17:53:53
  * @LastEditors: MarkGuan
- * @LastEditTime: 2022-10-31 13:56:33
+ * @LastEditTime: 2022-10-31 14:32:30
  * @Description: This a home javascript.
  */
 let siteTitle = gjs.dom(".site-title");
@@ -192,17 +192,18 @@ function contentScroll () {
 goNavContent();
 
 function goNavContent() {
-  for (let i = 0; i < navLis.length; i++) {
-    const element = navLis[i];
-    gjs.addEvent(element, 'click', goCurrentNav, false);
-    function goCurrentNav () {
+  let list = Array.prototype.slice.call(navLis);
+  list.forEach(function (k,i) {  
+    gjs.addEvent(k, 'click', goCurrentNav, false);
+    function goCurrentNav (e) {
+      let currentIndex = e.currentTarget.dataset.index;
       let contentTop = 0;
-      if (contents[i]) {
-        contentTop = contents[i].offsetTop;
+      if (contents[currentIndex]) {
+        contentTop = contents[currentIndex].offsetTop;
       }
       content.scrollTop = contentTop;
     }
-  }
+  });
 }
 
 // 到顶部
