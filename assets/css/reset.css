@@ -1,11 +1,11 @@
+@charset "utf-8";
 /*
-author:Mr.Mark ;
-date:2019.2.19;
-content: 重置样式;
-*/
-/* 字符编码 */
-@charset 'utf-8';
-
+ * @Autor: MarkGuan
+ * @Date: 2021-12-22 17:53:53
+ * @LastEditors: MarkGuan
+ * @LastEditTime: 2022-10-31 14:03:49
+ * @Description: This is a reset style.
+ */
 html,
 body {
   margin: 0;
@@ -86,45 +86,27 @@ a {
 }
 
 
+/*定义滑块*/
 ::-webkit-scrollbar {
   width: 6px;
-  background-color: rgba(0, 0, 0, 1);
+  height: 10px;
+  background: #e6e6e6;
 }
-
-::-webkit-scrollbar-track {
-  background-color: #f5f5f5;
-}
-
-/* 滚动条的滑轨背景颜色 */
 
 ::-webkit-scrollbar-thumb {
-  background-color: #2da7fd;
-  border-radius: 0;
-}
-
-/* 滑块颜色 */
-
-::-webkit-scrollbar-button {
-  background-color: #f7f7f7;
-}
-
-/* 滑轨两头的监听按钮颜色 */
-
-::-webkit-scrollbar-corner {
-  background-color: #2da7fd;
-  border-radius: 0;
+  background: #2da7fd;
 }
 
 /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
 
 ::selection {
   color: #fff;
-  background-color: #000;
+  background-color: #2da7fd;
   text-shadow: none;
 }
 
 ::-moz-selection {
   color: #fff;
-  background-color: #333;
+  background-color: #2da7fd;
   text-shadow: none;
 }

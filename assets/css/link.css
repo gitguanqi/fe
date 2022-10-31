@@ -1,3 +1,12 @@
+@charset "utf-8";
+/*
+ * @Autor: MarkGuan
+ * @Date: 2022-09-29 09:49:08
+ * @LastEditors: MarkGuan
+ * @LastEditTime: 2022-10-31 10:48:21
+ * @Description: This a link style.
+ */
+
 /* loading */
 .loading {
     display: flex;

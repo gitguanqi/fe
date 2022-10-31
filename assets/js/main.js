@@ -1,43 +1,55 @@
 /*
- * @Author: Mr.Mark
- * @Date: 2019-10-18 19:49:27
- * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2022-10-16 14:56:53
+ * @Autor: MarkGuan
+ * @Date: 2021-12-22 17:53:53
+ * @LastEditors: MarkGuan
+ * @LastEditTime: 2022-10-31 13:56:33
+ * @Description: This a home javascript.
  */
-let siteTitle = document.querySelector(".site-title");
-let counts = document.querySelectorAll(".count");
-let content = document.querySelector(".demo-content");
-let search = document.querySelector(".demo-content-search");
-let count = document.querySelector("#count");
-let navLis = document.querySelectorAll(".demo-nav-content li a");
-let contents = document.querySelectorAll(".demo-content-item");
-let contentItem = document.querySelectorAll(".demo-content-item-ls");
-let searchContent = document.querySelector(".demo-item-search");
+let siteTitle = gjs.dom(".site-title");
+let counts = gjs.domAll(".count");
+let content = gjs.dom(".demo-content");
+let search = gjs.dom(".demo-content-search");
+let count = gjs.dom("#count");
+let navLis = gjs.domAll(".demo-nav-content li");
+let contents = gjs.domAll(".demo-content-item");
+let contentItem = gjs.domAll(".demo-content-item-ls");
+let searchContent = gjs.dom(".demo-item-search");
 let host = location.origin + location.pathname;
 
 // 到顶部
-let goTopBtn = document.querySelector(".demo-go-top");
-let showNav = document.querySelector(".demo-show-nav");
-let demoNav = document.querySelector(".demo-nav");
-let navExit = document.querySelector(".demo-nav-exit");
+let goTopBtn = gjs.dom(".demo-go-top");
+let showNav = gjs.dom(".demo-show-nav");
+let demoNav = gjs.dom(".demo-nav");
+let navExit = gjs.dom(".demo-nav-exit");
 
 // 版权日期
-let year = document.getElementById('year');
+let year = gjs.gId('year');
 year.innerText = new Date().getFullYear();
 
 // 搜索事件
-search.addEventListener("input", searchDemo, false);
+gjs.addEvent(search, "input", searchDemo, false);
 
 // 获取数据
-getData();
+getList();
 
-function getData() {
+function getList(keyword) {
   gjs.httpSimple("get", host + "/assets/mock/list.min.json", null, function (res) {
     if (res.code === 200) {
       let data = res.data;
       document.title = data.name + "- 探索新技术，展望未来云";
       siteTitle.innerText = data.name;
-      showData(data.list);
+      let list = data.list;
+      if (keyword) {
+        let searchArr = [];
+        for (let i = 0; i < list.length; i++) {
+          const item = list[i];
+          if (item.name.indexOf(keyword) > -1) {
+            searchArr.push(item);
+          }
+        }
+        list = searchArr;
+      }
+      showData(list, keyword);
     } else {
       let list = [];
       showData(list);
@@ -47,8 +59,8 @@ function getData() {
 
 // 显示搜索框
 function searchDemo(e) {
-  let keywords = e.target.value;
-  if (keywords == "") {
+  let keyword = e.target.value;
+  if (keyword == "") {
     for (let i = 0; i < contents.length; i++) {
       contents[i].style.display = "block";
     }
@@ -58,75 +70,21 @@ function searchDemo(e) {
       contents[i].style.display = "none";
     }
     searchContent.style.display = "block";
-    keywords = keywords.toLowerCase();
-    getSearch(keywords);
-  }
-}
-
-// 获取搜索内容
-function getSearch(keywords) {
-  gjs.httpSimple("get", host + "/assets/mock/list.min.json", null, function (res) {
-    let searchArr = [];
-    let list = res.data.list;
-    for (let i = 0; i < list.length; i++) {
-      const item = list[i];
-      if (item.name.indexOf(keywords) > -1) {
-        searchArr.push(item);
-      }
-    }
-    showSearchData(searchArr);
-  });
-}
-
-// 显示搜索数据
-function showSearchData(list) {
-  let contentItem = document.querySelector(
-    ".demo-item-search .demo-content-item-ls"
-  );
-  let searchCount = document.getElementById("search-count");
-  contentItem.innerHTML = "";
-  for (let i = 0; i < list.length; i++) {
-    const element = list[i];
-    let tags = element.tags.split(",").join(", ");
-    if (
-      element.href.indexOf("http") > -1 ||
-      element.href.indexOf("https") > -1
-    ) {
-      element.href =
-        "./link/check/?target=" +
-        encodeURIComponent(element.href);
-    } else {
-      element.href = host + element.href;
-    }
-    let str =
-      '<li><a href="' +
-      element.href +
-      '" target="_blank" title=" ' +
-      element.description +
-      '"><div class="demo-item-img"><img class="lazyimg" src="./assets/img/holder.png" data-src="' +
-      "./" +
-      element.picUrl +
-      '" alt="' +
-      element.name +
-      '"></div><div class="project-bot"><span class="project-title">' +
-      element.name +
-      '</span><span class="project-des">' +
-      element.description +
-      '</span><span class="project-tags"><i class="felab felab-tags"></i>' +
-      tags +
-      "</span></div></a></li>";
-    contentItem.innerHTML += str;
-  }
-  searchCount.innerText = list.length;
-  if (list && list.length) {
-    lazyLoad();
+    keyword = keyword.toLowerCase();
+    getList(keyword);
   }
 }
 
 // 显示数据
-function showData(list) {
-  let contentItem = document.querySelectorAll(".demo-content-item-ls");
-
+function showData(list, keyword) {
+  let contentItem = gjs.domAll(".demo-content-item-ls"),searchCount;
+  if (keyword) {
+    contentItem = gjs.dom(
+      ".demo-item-search .demo-content-item-ls"
+    );
+    searchCount = gjs.gId("search-count");
+    contentItem.innerHTML = "";
+  }
   for (let i = 0; i < list.length; i++) {
     const element = list[i];
     let cIndex = element.cid.toString().split("")[0] - 1;
@@ -158,13 +116,21 @@ function showData(list) {
       '</span><span class="project-tags"><i class="felab felab-tags"></i>' +
       tags +
       "</span></div></a></li>";
-    contentItem[cIndex].innerHTML += str;
+    if (keyword) {
+      contentItem.innerHTML += str; 
+    } else {
+      contentItem[cIndex].innerHTML += str;
+    }
   }
-  for (let i = 0; i < contentItem.length; i++) {
-    const element = contentItem[i];
-    counts[i].innerText = element.childNodes.length;
+  if (keyword) {
+    searchCount.innerText = list.length;
+  } else {
+    for (let i = 0; i < contentItem.length; i++) {
+      const element = contentItem[i];
+      counts[i].innerText = element.childNodes.length;
+    }
+    count.innerText = list.length;
   }
-  count.innerText = list.length;
   if (list && list.length) {
     lazyLoad();
   }
@@ -179,7 +145,7 @@ function isVisible (element) {
 
 
 function lazyLoad() {
-  let lazyImgs = document.querySelectorAll(".lazyimg");
+  let lazyImgs = gjs.domAll(".lazyimg");
     for (let i = 0; i < lazyImgs.length; i++) {
       let img = lazyImgs[i];
       let res = isVisible(img);
@@ -189,34 +155,38 @@ function lazyLoad() {
     }
 }
 
-content.addEventListener(
-  "scroll",
-  function () {
-    // 懒加载
-    lazyImgs = document.querySelectorAll(".lazyimg");
-    if (lazyImgs && lazyImgs.length) {
-      lazyLoad();
-    }
-    // 到顶部
-    let scrollTop = content.scrollTop;
-    if (scrollTop > 280) {
-      goTopBtn.style.display = "block";
-    } else {
-      goTopBtn.style.display = "none";
-    }
-    // 滚动高亮
-    for (let i = 0; i < contents.length; i++) {
-      const element = contents[i].offsetTop - 50;
-      if (element <= scrollTop) {
-        for (let j = 0; j < navLis.length; j++) {
-          navLis[j].className = "";
-        }
-        navLis[i].className = "active";
+
+gjs.addEvent(content, 'scroll', contentScroll, false);
+
+/**
+ * @author: MarkGuan
+ * @description: nav scroll
+ * @return {*}
+ */
+function contentScroll () {  
+  // 懒加载
+  lazyImgs = gjs.domAll(".lazyimg");
+  if (lazyImgs && lazyImgs.length) {
+    lazyLoad();
+  }
+  // 到顶部
+  let scrollTop = content.scrollTop;
+  if (scrollTop > 280) {
+    goTopBtn.style.display = "block";
+  } else {
+    goTopBtn.style.display = "none";
+  }
+  // 滚动高亮
+  for (let i = 0; i < contents.length; i++) {
+    const element = contents[i].offsetTop - 50;
+    if (element <= scrollTop) {
+      for (let j = 0; j < navLis.length; j++) {
+        navLis[j].className = "";
       }
+      navLis[i].className = "active";
     }
-  },
-  false
-);
+  }
+}
 
 // 点击到对应
 goNavContent();
@@ -224,14 +194,14 @@ goNavContent();
 function goNavContent() {
   for (let i = 0; i < navLis.length; i++) {
     const element = navLis[i];
-    element.addEventListener("click", function (e) {
+    gjs.addEvent(element, 'click', goCurrentNav, false);
+    function goCurrentNav () {
       let contentTop = 0;
       if (contents[i]) {
         contentTop = contents[i].offsetTop;
       }
-      document.documentElement.scrollTop = contentTop;
-      document.body.scrollTop = contentTop;
-    });
+      content.scrollTop = contentTop;
+    }
   }
 }
 
@@ -253,15 +223,16 @@ function goTop() {
 }
 
 // 手机版显示左侧导航
-if (navigator.userAgent.indexOf("Mobile") > -1) {
+showSlideNav();
+function showSlideNav () {  
   if (showNav) {
-    showNav.addEventListener("click", showSilderNav, false);
+    gjs.addEvent(showNav, "click", showSilderNav, false);
     function showSilderNav() {
       demoNav.style.left = 0;
     }
   }
   if (navExit) {
-    navExit.addEventListener("click", hideSilderNav, false);
+    gjs.addEvent(navExit, "click", hideSilderNav, false);
 
     function hideSilderNav() {
       demoNav.style.left = -100 + "%";
@@ -276,5 +247,6 @@ window.onresize = function () {
     demoNav.style.left = 0;
   } else {
     demoNav.style.left = -100 + "%";
+    showSlideNav();
   }
 };

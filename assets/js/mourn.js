@@ -1,10 +1,9 @@
 /*
- * @Author: fegq
- * @Date: 2022-10-02 11:48:04
- * @LastEditors: fegq
- * @LastEditTime:2022-10-02 10:03:32
+ * @Autor: MarkGuan
+ * @Date: 2022-09-29 10:41:01
+ * @LastEditors: MarkGuan
+ * @LastEditTime: 2022-10-31 10:56:37
  * @Description: This is a mourn js!
- * @Version: 0.0.1
  */
 (function xqMourn () {
     let xqmourn = document.getElementById('xqmourn');

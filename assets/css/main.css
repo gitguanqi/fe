@@ -1,8 +1,10 @@
+@charset "utf-8";
 /*
- * @Author: Mr.Mark  
- * @Date: 2019-10-18 19:44:09 
- * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2022-09-29 11:13:43
+ * @Autor: MarkGuan
+ * @Date: 2021-12-22 17:53:53
+ * @LastEditors: MarkGuan
+ * @LastEditTime: 2022-10-31 13:20:55
+ * @Description: This a home style.
  */
 .clearFix {
     zoom: 1;
@@ -80,18 +82,20 @@ header {
     border-bottom: none;
 }
 
-.demo-nav-content li a {
+.demo-nav-content li {
     display: block;
     width: 100%;
     height: 100%;
     font-size: 16px;
+    color: #fff;
+    cursor: pointer;
 }
 
-.demo-nav-content li a.active {
+.demo-nav-content li.active {
     color: #2da7fd;
 }
 
-.demo-nav-content li a .felab {
+.demo-nav-content li i.felab {
     margin-right: 10px;
     font-size: 12px;
 }
@@ -325,6 +329,8 @@ header {
 }
 
 .demo-go-top i {
+    position: relative;
+    top: -2px;
     font-size: 28px;
 }
 
