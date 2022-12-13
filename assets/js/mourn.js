@@ -2,14 +2,14 @@
  * @Autor: MarkGuan
  * @Date: 2022-09-29 10:41:01
  * @LastEditors: MarkGuan
- * @LastEditTime: 2022-12-05 15:07:39
+ * @LastEditTime: 2022-12-13 09:59:28
  * @Description: This is a mourn js!
  */
 (function xqMourn () {
     let xqmourn = document.getElementById('xqmourn');
     let user = xqmourn.dataset ? xqmourn.dataset.date : '';
     user = user ? user.split(',') : [];
-    let mourns = ['7.7', '12.13'];
+    let mourns = ['7.7'];
     const baseUrl = location.origin+location.pathname+'/assets/mock/mourn.json';
     if (typeof fetch === 'function' && typeof Promise === 'function' && typeof Set === 'function') {
         fetch(baseUrl).then(function(res) {
