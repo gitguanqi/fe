@@ -2,7 +2,7 @@
  * @Autor: MarkGuan
  * @Date: 2022-09-29 10:41:01
  * @LastEditors: MarkGuan
- * @LastEditTime: 2022-12-14 09:07:58
+ * @LastEditTime: 2022-12-14 09:20:22
  * @Description: This is a mourn js!
  */
 (function xqMourn () {
@@ -43,7 +43,6 @@
         let mouth = now.getMonth()+1;
         let day = now.getDate();
         let date = mouth.toString()+'.'+day.toString();
-        console.log(arr);
         if (arr.indexOf(date) > -1) {
             document.documentElement.style = 'filter:grayscale(100%); -webkit-filter:grayscale(100%); -moz-filter:grayscale(100%); -ms-filter:grayscale(100%); -o-filter:grayscale(100%); filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); -webkit-filter:grayscale(1);filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");';
         } else {
