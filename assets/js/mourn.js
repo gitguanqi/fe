@@ -2,7 +2,7 @@
  * @Autor: MarkGuan
  * @Date: 2022-09-29 10:41:01
  * @LastEditors: MarkGuan
- * @LastEditTime: 2022-12-13 09:59:28
+ * @LastEditTime: 2022-12-14 08:38:06
  * @Description: This is a mourn js!
  */
 (function xqMourn () {
@@ -10,7 +10,9 @@
     let user = xqmourn.dataset ? xqmourn.dataset.date : '';
     user = user ? user.split(',') : [];
     let mourns = ['7.7'];
-    const baseUrl = location.origin+location.pathname+'/assets/mock/mourn.json';
+    const isCC = location.hostname.indexOf('xqgj.cc') > -1;
+    const hostUrl = isCC ? location.origin + '/felab' : location.origin;
+    const baseUrl = hostUrl+'/assets/mock/mourn.json';
     if (typeof fetch === 'function' && typeof Promise === 'function' && typeof Set === 'function') {
         fetch(baseUrl).then(function(res) {
             res.json().then(function (doc) {
