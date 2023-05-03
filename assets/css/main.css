@@ -3,7 +3,7 @@
  * @Autor: MarkGuan
  * @Date: 2021-12-22 17:53:53
  * @LastEditors: MarkGuan
- * @LastEditTime: 2022-10-31 13:20:55
+ * @LastEditTime: 2023-05-03 16:52:55
  * @Description: This a home style.
  */
 .clearFix {
@@ -243,6 +243,7 @@ header {
     line-height: 30px;
     font-size: 13px;
     color: #555;
+    word-break: break-all;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
