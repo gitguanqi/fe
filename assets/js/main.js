@@ -2,7 +2,7 @@
  * @Autor: MarkGuan
  * @Date: 2021-12-22 17:53:53
  * @LastEditors: MarkGuan
- * @LastEditTime: 2022-10-31 14:32:30
+ * @LastEditTime: 2023-06-10 20:03:23
  * @Description: This a home javascript.
  */
 let siteTitle = gjs.dom(".site-title");
@@ -15,6 +15,17 @@ let contents = gjs.domAll(".demo-content-item");
 let contentItem = gjs.domAll(".demo-content-item-ls");
 let searchContent = gjs.dom(".demo-item-search");
 let host = location.origin + location.pathname;
+let origin =
+  host.indexOf("localhost") > -1 || host.indexOf("127.0.0.1") > -1
+    ? "cn"
+    : host.indexOf("guanqi.xyz") > -1
+    ? "xyz"
+    : "cc";
+let originUrls = {
+  cn: "guanqi.cn",
+  xyz: "guanqi.xyz",
+  cc: "xqgj.cc",
+};
 
 // 到顶部
 let goTopBtn = gjs.dom(".demo-go-top");
@@ -23,7 +34,7 @@ let demoNav = gjs.dom(".demo-nav");
 let navExit = gjs.dom(".demo-nav-exit");
 
 // 版权日期
-let year = gjs.gId('year');
+let year = gjs.gId("year");
 year.innerText = new Date().getFullYear();
 
 // 搜索事件
@@ -77,11 +88,10 @@ function searchDemo(e) {
 
 // 显示数据
 function showData(list, keyword) {
-  let contentItem = gjs.domAll(".demo-content-item-ls"),searchCount;
+  let contentItem = gjs.domAll(".demo-content-item-ls"),
+    searchCount;
   if (keyword) {
-    contentItem = gjs.dom(
-      ".demo-item-search .demo-content-item-ls"
-    );
+    contentItem = gjs.dom(".demo-item-search .demo-content-item-ls");
     searchCount = gjs.gId("search-count");
     contentItem.innerHTML = "";
   }
@@ -89,13 +99,12 @@ function showData(list, keyword) {
     const element = list[i];
     let cIndex = element.cid.toString().split("")[0] - 1;
     let tags = element.tags.split(",").join(", ");
-    if (
-      element.href.indexOf("http") > -1 ||
-      element.href.indexOf("https") > -1
-    ) {
-      element.href =
-        "./link/check/?target=" +
-        encodeURIComponent(element.href);
+    let href = element.href;
+    if (href.indexOf("localhost") > -1) {
+      element.href = href.replace(/localhost/gi, originUrls[origin]);
+    }
+    if (element.href.indexOf("http") > -1 || element.href.indexOf("https") > -1) {
+      element.href = "./link/check/?target=" + encodeURIComponent(element.href);
     } else {
       element.href = host + element.href;
     }
@@ -117,7 +126,7 @@ function showData(list, keyword) {
       tags +
       "</span></div></a></li>";
     if (keyword) {
-      contentItem.innerHTML += str; 
+      contentItem.innerHTML += str;
     } else {
       contentItem[cIndex].innerHTML += str;
     }
@@ -137,33 +146,32 @@ function showData(list, keyword) {
 }
 
 // 图片懒加载
-function isVisible (element) {
-  let clientHei = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+function isVisible(element) {
+  let clientHei =
+    window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
   let rect = element.getBoundingClientRect();
   return rect.top > 0 && rect.top < clientHei;
 }
 
-
 function lazyLoad() {
   let lazyImgs = gjs.domAll(".lazyimg");
-    for (let i = 0; i < lazyImgs.length; i++) {
-      let img = lazyImgs[i];
-      let res = isVisible(img);
-      if (res) {
-        img.setAttribute('src', img.getAttribute('data-src'));
-      }
+  for (let i = 0; i < lazyImgs.length; i++) {
+    let img = lazyImgs[i];
+    let res = isVisible(img);
+    if (res) {
+      img.setAttribute("src", img.getAttribute("data-src"));
     }
+  }
 }
 
-
-gjs.addEvent(content, 'scroll', contentScroll, false);
+gjs.addEvent(content, "scroll", contentScroll, false);
 
 /**
  * @author: MarkGuan
  * @description: nav scroll
  * @return {*}
  */
-function contentScroll () {  
+function contentScroll() {
   // 懒加载
   lazyImgs = gjs.domAll(".lazyimg");
   if (lazyImgs && lazyImgs.length) {
@@ -193,9 +201,9 @@ goNavContent();
 
 function goNavContent() {
   let list = Array.prototype.slice.call(navLis);
-  list.forEach(function (k,i) {  
-    gjs.addEvent(k, 'click', goCurrentNav, false);
-    function goCurrentNav (e) {
+  list.forEach(function (k, i) {
+    gjs.addEvent(k, "click", goCurrentNav, false);
+    function goCurrentNav(e) {
       let currentIndex = e.currentTarget.dataset.index;
       let contentTop = 0;
       if (contents[currentIndex]) {
@@ -225,7 +233,7 @@ function goTop() {
 
 // 手机版显示左侧导航
 showSlideNav();
-function showSlideNav () {  
+function showSlideNav() {
   if (showNav) {
     gjs.addEvent(showNav, "click", showSilderNav, false);
     function showSilderNav() {
@@ -242,8 +250,7 @@ function showSlideNav () {
 }
 
 window.onresize = function () {
-  let clientWidth =
-    document.documentElement.clientWidth || document.body.clientWidth;
+  let clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
   if (clientWidth >= 750) {
     demoNav.style.left = 0;
   } else {
