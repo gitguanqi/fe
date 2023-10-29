@@ -58,6 +58,13 @@ nav a.active {
     list-style: none;
 }
 
+#pages {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 996px;
+}
+
 #pages li {
     display: inline-block;
     margin-right: 10px;
